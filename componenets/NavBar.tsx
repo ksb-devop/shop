@@ -272,17 +272,17 @@ import {
         {
           label: 'Kaffeevollautomaten',
           subLabel: 'Perfekter Qualität auf Knopfdruck.',
-          href: '#',
+          href: '/mashcineCategory/vollautomaten',
         },
         {
           label: 'Espresso-Pads',
           subLabel: 'Italienischen Espresso, leckeren Cappuccino',
-          href: '#',
+          href: '/mashcineCategory/padmashine',
         },
         {
           label: 'Table Top',
           subLabel: 'Standautomaten ideal für Büros, Praxen und Werkstätten. Modern & praktisch.',
-          href: '#',
+          href: '/mashcineCategory/tabletop',
         },
       ],
     },

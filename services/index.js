@@ -280,3 +280,56 @@ export const getCategories = async () => {
   
     return result.mashine;
   };
+
+
+
+
+  export const getOrderForm = async () => {
+    const query = gql`
+    query getOrderForm {
+      ordersConnection {
+        edges {
+          node {
+            id
+            orderInput {
+              __typename
+              name
+              label
+              placeholder
+              required
+              type
+            }
+            orderSelects {
+              __typename
+              name
+              label
+              orderOption {
+                value
+                option
+              }
+              required
+            }
+            orderCheckbox {
+              __typename
+              name
+              label
+              required
+            }
+            orderTextarea {
+              __typename
+              name
+              label
+              required
+              placeholder
+            }
+          }
+        }
+      }
+      }
+      
+    `;
+  
+    const result = await request(graphqlAPI, query);
+  
+    return result.ordersConnection.edges;
+  };
