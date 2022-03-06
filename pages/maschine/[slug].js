@@ -21,11 +21,22 @@ import {
     VisuallyHidden,
     List,
     ListItem,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbSeparator, 
+    Tabs, TabList, TabPanels, Tab, TabPanel, 
+    MdCheckCircle,
+   
+    ListIcon,
+    OrderedList,
+    UnorderedList,
+    Grid,
   } from '@chakra-ui/react';
 
 import { getMaschineDetails, getMashcinen } from '../../services/index'
 import SideCategories from '../../componenets/SideCategories'
-
+import ProductSlider from '../../componenets/ProductSlider'
 
 
 
@@ -42,23 +53,47 @@ export default function MaschinePage({maschine}) {
       </Head>
 
       <main className={styles.main}>
-        <NavBar/> 
-       <SideCategories/>
-        
+   
+       <SideCategories/> 
+       <Box 
+       top={170}
+       left={100}
+       position={'absolute'}
+          >
+          <Breadcrumb fontWeight='medium' fontSize='sm'>
+  <BreadcrumbItem>
+    <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+  </BreadcrumbItem>
+
+  <BreadcrumbItem>
+    <BreadcrumbLink href='/maschine'>Maschinen/Zubehör</BreadcrumbLink>
+  </BreadcrumbItem>
+
+  <BreadcrumbItem >
+    <BreadcrumbLink href='/mashcineCategory/vollautomaten'>Kaffeevollautomaten</BreadcrumbLink>
+  </BreadcrumbItem>
+
+  <BreadcrumbItem isCurrentPage>
+    <BreadcrumbLink href='maschine/jurax3c'>Jura Giga x3c Professional</BreadcrumbLink>
+  </BreadcrumbItem>
+</Breadcrumb>
+
+          </Box>
         <Container maxW={'7xl'}>
+
+        
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 18, md: 24 }}>
-        <Flex>
-          <Image
+        <Flex w={'100%'} >
+          <ProductSlider
             rounded={'md'}
-            alt={'maschine image'}
-            src={maschine.image.url}
-            fit={'cover'}
+            alt={'maschine image'} 
+            fit={'contain'}
             align={'center'}
             w={'100%'}
-            h={{ base: '100%', sm: '400px', lg: '500px' }}
+            h={{ base: '100%', sm: '400px', lg: '100%' }}
           />
         </Flex>
         <Stack spacing={{ base: 6, md: 10 }}>
@@ -92,119 +127,99 @@ export default function MaschinePage({maschine}) {
                 fontWeight={'300'}>
                 {maschine.excerpt}
               </Text>
-              <Text fontSize={'lg'}>
-              {maschine.excerpt}
-              </Text>
+               
             </VStack>
-            <Box>
-              <Text
-                fontSize={{ base: '16px', lg: '18px' }}
-                color={useColorModeValue('yellow.500', 'yellow.300')}
-                fontWeight={'500'}
-                textTransform={'uppercase'}
-                mb={'4'}>
-                Features
-              </Text>
-
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                <List spacing={2}>
-                  <ListItem>Chronograph</ListItem>
-                  <ListItem>Master Chronometer Certified</ListItem>{' '}
-                  <ListItem>Tachymeter</ListItem>
-                </List>
-                <List spacing={2}>
-                  <ListItem>Anti‑magnetic</ListItem>
-                  <ListItem>Chronometer</ListItem>
-                  <ListItem>Small seconds</ListItem>
-                </List>
-              </SimpleGrid>
-            </Box>
-            <Box>
-              <Text
-                fontSize={{ base: '16px', lg: '18px' }}
-                color={useColorModeValue('yellow.500', 'yellow.300')}
-                fontWeight={'500'}
-                textTransform={'uppercase'}
-                mb={'4'}>
-                Product Details
-              </Text>
-
-              <List spacing={2}>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Between lugs:
-                  </Text>{' '}
-                  20 mm
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Bracelet:
-                  </Text>{' '}
-                  leather strap
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Case:
-                  </Text>{' '}
-                  Steel
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Case diameter:
-                  </Text>{' '}
-                  42 mm
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Dial color:
-                  </Text>{' '}
-                  Black
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Crystal:
-                  </Text>{' '}
-                  Domed, scratch‑resistant sapphire crystal with anti‑reflective
-                  treatment inside
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Water resistance:
-                  </Text>{' '}
-                  5 bar (50 metres / 167 feet){' '}
-                </ListItem>
-              </List>
-            </Box>
-          </Stack>
-
-          <Button
-            rounded={'none'}
-            w={'full'}
-            mt={8}
-            size={'lg'}
-            py={'7'}
-            bg={useColorModeValue('gray.900', 'gray.50')}
-            color={useColorModeValue('white', 'gray.900')}
-            textTransform={'uppercase'}
-            _hover={{
-              transform: 'translateY(2px)',
-              boxShadow: 'lg',
-            }}>
-            Add to cart
-          </Button>
-
-          <Stack direction="row" alignItems="center" justifyContent={'center'}>
+             
             
-            <Text>2-3 business days delivery</Text>
           </Stack>
+ 
         </Stack>
       </SimpleGrid>
+
+<Box>
+<Tabs isFitted variant='enclosed'>
+  <TabList   mb='1em'>
+    <Tab>Vorzüge</Tab>
+    <Tab>Technische Übersicht</Tab>
+    <Tab>Service</Tab> 
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <Grid gridTemplateColumns={'repeat(2, 1fr)'} py={5} >
+      <Image
+            p={6}
+            w={'500px'}
+            alt={'Login Image'}
+            objectFit={'cover'}
+            src={'/jurax3c/jm4.jpg'}
+          />
+      <Text textAlign={'center'} mt={'80px'} 
+      >Ihr Einstieg in die Oberklasse
+Die GIGA X8cGeneration2 ist eine Neuentwicklung auf Basis der langjährigen 
+Erfahrung aus dem Hause Jura für die professionelle Kaffeeversorgung. Die 
+einzigartiger Speed-Funktion bietet perfekten Kaffeegenuss in Rekordzeit - 
+ideal bei maximaler Auslastung. Sehr belastbar für einen täglichen Bezug von 
+täglich 200 Tassen höchsten Kaffeegenuss. Mit den 2 Farbvarianten Chrom und Schwarz 
+passt sie sich perfekt in Ihre Küche ein.
+   </Text>
+
+   <Text textAlign={'center'} mt={'80px'} 
+      >Ihr Einstieg in die Oberklasse
+Die GIGA X8cGeneration2 ist eine Neuentwicklung auf Basis der langjährigen 
+Erfahrung aus dem Hause Jura für die professionelle Kaffeeversorgung. Die 
+einzigartiger Speed-Funktion bietet perfekten Kaffeegenuss in Rekordzeit - 
+ideal bei maximaler Auslastung. Sehr belastbar für einen täglichen Bezug von 
+täglich 200 Tassen höchsten Kaffeegenuss. Mit den 2 Farbvarianten Chrom und Schwarz 
+passt sie sich perfekt in Ihre Küche ein.
+   </Text>
+ 
+
+    </Grid>
+    </TabPanel>
+    <TabPanel>
+       <Box py={12} >
+       <List spacing={3}>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Kaffeegenuss auf höchstem Niveau: Ristretto, Espresso, Café Crème, Cappuccino, Latte macchiato… bis zu 32 individuell programmierbare Spezialitäten
+  </ListItem>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Sehr schnelle Zubereitung: z.B. 2 Latte macciato in nur 86 sek.
+  </ListItem>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Hohe Kapazität: Festwasseranschluss und
+2 x 650g Bohnenbehälter minimaler Aufwand beim Befülle
+  </ListItem>
+  {/* You can also use custom icons from react-icons */}
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    200 Tassen pro Tag (365 Tage im Jahr)
+  </ListItem>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Bereiten Sie gleichzeitig 1-2 Tassen oder ein Kännchen (360ml) zu
+  </ListItem>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Einfach bedienbar: Intuitiv bedienbarer und programmierbarer Touchscreen und akustische Rückmeldung
+  </ListItem>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Professionelle Kaffeezubereitung: zwei elektrisch verstellbare Profi-Keramikmahlwerke für schnelle, präzise, homogene, konstant gleichmäßige Mahlung, sowie zwei Heizsysteme, zwei Pumpen und zwei Fluidsysteme und variable Brühkammer mit 5 bis 16g
+  </ListItem>
+</List>
+       </Box>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+</Box>
+
     </Container>
       </main>
 
-      <footer className={styles.footer}>
-      Kaffee-Service Berlin Peter Ganss GmbH
-      </footer>
+      
     </div>
   )
 }

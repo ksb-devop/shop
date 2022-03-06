@@ -2,11 +2,12 @@ import { Badge, Box, Image, Text, SimpleGrid, Grid, Stack, styled, Link, Flex } 
 import React, { useState, useEffect }from 'react'
 import styles from '../styles/Home.module.css'
 import { getCategories } from '../services';
+import { useRouter } from 'next/router'
 
 const Categories = () => {
 
   
-
+  const router = useRouter();
 
   const [categories, setCategories] = useState([]);
 
@@ -19,32 +20,44 @@ const Categories = () => {
  
 
   return (
-    <div className={styles.categoryList} >
+    <div  >
+      <Box  
+      maxW={'300px'}
+      flexDirection={'column'}
+      boxShadow={'dark-lg'}
+      p={8}
+      borderRadius={5}
+      mt={'120px'}
+      ml={{ base: 3, md: 10 }}
+      display={'flex'}  >
 
 {categories.map((categories, index) => (
-      <>
+       
         <Box
-        as='button'
-        maxH={250}
-        maxW={250}
-        key={index}
+        as='button' 
+        key={categories.node.slug}
+        onClick={async () => { 
+          router.push(`/category/${categories.node.slug}`);
+
+          }}
         >
-        <Link href={`/category/${categories.node.slug}`}  > 
+        
         
         <Text
         textAlign={'center'}
         fontWeight={500}
         my={2}
+        
         borderRadius={5}
         >{categories.node.name}</Text>
-        </Link>   
+           
         </Box>
-        </>
+         
       ))}
       
      
         
-      
+      </Box>
          
     </div>
   )

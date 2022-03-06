@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import styles from '../../styles/Home.module.css'
-
+import { useRouter } from 'next/router'
 import NavBar from '../../componenets/NavBar.tsx'
 
 import {
@@ -25,13 +25,14 @@ import {
 
 import { getProductDetails, getProducts } from '../../services/index'
 import SideCategories from '../../componenets/SideCategories'
+import ProductWidget from '../../componenets/ProductWidget';
 
 
 
-
-export default function ProductPage({product}) {
+export default function ProductPage({product, products}) {
 
     
+  const router = useRouter();
 
   return (
     <div >
@@ -42,15 +43,20 @@ export default function ProductPage({product}) {
       </Head>
 
       <main className={styles.main}>
-        <NavBar/> 
+       
        <SideCategories/>
         
-        <Container maxW={'7xl'}>
+        <Container
+        boxShadow={'dark-lg'}
+        my={'90px'}
+        maxW={{ base: '90%', sm: '70%', lg: '70%' }}
+        alignSelf={'center'}
+        >
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 18, md: 24 }}>
-        <Flex>
+        <Flex  >
           <Image
             rounded={'md'}
             alt={'product image'}
@@ -61,7 +67,9 @@ export default function ProductPage({product}) {
             h={{ base: '100%', sm: '400px', lg: '500px' }}
           />
         </Flex>
-        <Stack spacing={{ base: 6, md: 10 }}>
+        <Stack 
+        ml={{ base: 4, sm: -10 }}
+        w={'80%'} spacing={{ base: 6, md: 15 }}>
           <Box as={'header'}>
             <Heading
               lineHeight={1.1}
@@ -87,15 +95,15 @@ export default function ProductPage({product}) {
             }>
             <VStack spacing={{ base: 4, sm: 6 }}>
               <Text
-                color={useColorModeValue('gray.500', 'gray.400')}
-                fontSize={'2xl'}
+                color={useColorModeValue('gray.900', 'gray.400')}
+                fontSize={{ base: 'lg', sm: '2xl' }}
+                
                 fontWeight={'300'}>
                 {product.excerpt}
               </Text>
-              <Text fontSize={'lg'}>
-              {product.excerpt}
-              </Text>
+               
             </VStack>
+            
             <Box>
               <Text
                 fontSize={{ base: '16px', lg: '18px' }}
@@ -103,108 +111,92 @@ export default function ProductPage({product}) {
                 fontWeight={'500'}
                 textTransform={'uppercase'}
                 mb={'4'}>
-                Features
-              </Text>
-
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                <List spacing={2}>
-                  <ListItem>Chronograph</ListItem>
-                  <ListItem>Master Chronometer Certified</ListItem>{' '}
-                  <ListItem>Tachymeter</ListItem>
-                </List>
-                <List spacing={2}>
-                  <ListItem>Anti‑magnetic</ListItem>
-                  <ListItem>Chronometer</ListItem>
-                  <ListItem>Small seconds</ListItem>
-                </List>
-              </SimpleGrid>
-            </Box>
-            <Box>
-              <Text
-                fontSize={{ base: '16px', lg: '18px' }}
-                color={useColorModeValue('yellow.500', 'yellow.300')}
-                fontWeight={'500'}
-                textTransform={'uppercase'}
-                mb={'4'}>
-                Product Details
+                EINZELHEITEN ZUM PRODUKT
               </Text>
 
               <List spacing={2}>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                    Between lugs:
+                  Geschmack:
                   </Text>{' '}
-                  20 mm
+                  {product.taste}
                 </ListItem>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                    Bracelet:
+                  Sorte:
                   </Text>{' '}
-                  leather strap
+                  {product.type}
                 </ListItem>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                    Case:
+                  Beschaffenheit :
                   </Text>{' '}
-                  Steel
+                  {product.texture}
                 </ListItem>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                    Case diameter:
+                  Verpackungsinhalt :
                   </Text>{' '}
-                  42 mm
+                  {product.size}
                 </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Dial color:
-                  </Text>{' '}
-                  Black
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Crystal:
-                  </Text>{' '}
-                  Domed, scratch‑resistant sapphire crystal with anti‑reflective
-                  treatment inside
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Water resistance:
-                  </Text>{' '}
-                  5 bar (50 metres / 167 feet){' '}
-                </ListItem>
+                 
+                 
               </List>
             </Box>
           </Stack>
 
-          <Button
-            rounded={'none'}
-            w={'full'}
-            mt={8}
-            size={'lg'}
-            py={'7'}
-            bg={useColorModeValue('gray.900', 'gray.50')}
-            color={useColorModeValue('white', 'gray.900')}
-            textTransform={'uppercase'}
-            _hover={{
-              transform: 'translateY(2px)',
-              boxShadow: 'lg',
-            }}>
-            Add to cart
-          </Button>
-
-          <Stack direction="row" alignItems="center" justifyContent={'center'}>
-            
-            <Text>2-3 business days delivery</Text>
-          </Stack>
+          
         </Stack>
       </SimpleGrid>
+
+    <Box 
+      display={'flex'}
+      flexDirection={'row'}
+      flexWrap={'wrap'}
+      gap={10}
+      my={10}
+      mx={8}
+    >
+
+{product.category.product.map((product) => (
+  <>
+         <Box
+        role={'group'}
+        display={'flex'}
+        flexDirection={'column'}
+        alignItems='center' 
+        boxShadow={'lg'}
+        borderRadius={10}
+        py={4}
+        _hover={{ 
+          bg: 'gray.100',
+          
+        }} 
+         >
+         <Image
+            rounded={'lg'}
+            height={230}
+            width={300}
+            objectFit={'contain'}
+            src={product.image.url}
+          />
+        <Text key={product.slug}>{product.title}</Text>
+        <Button 
+          onClick={async () => { 
+            router.push(`/product/${product.slug}`);
+  
+            }}
+          colorScheme='blue'>Mehr-Info</Button>
+        </Box>
+        </>
+        ))}
+ 
+    </Box>
+
     </Container>
       </main>
 
-      <footer className={styles.footer}>
-      Kaffee-Service Berlin Peter Ganss GmbH
-      </footer>
+   
     </div>
   )
 }

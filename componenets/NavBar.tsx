@@ -29,21 +29,24 @@ import {
     return (
       <Box>
         <Flex
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={useColorModeValue('white', 'gray.900')}
           color={useColorModeValue('gray.600', 'white')}
-          minH={'60px'}
+          minH={'90px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
           borderBottom={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}
-          top={0}
+          top={0} 
           >
           <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
-            display={{ base: 'flex', md: 'none' }}>
+            display={{ base: 'flex', md: 'none' }}
+            
+            >
+              
             <IconButton
               onClick={onToggle}
               icon={
@@ -53,15 +56,16 @@ import {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+          <Flex 
+          flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
          <Link href='/' >
-         <Image
-          src='/logo.png' 
-          alt='logo'
-          backgroundColor={'blue.400'} 
+         <Image  
+          src='/logo2.png' 
+          alt='logo' 
           borderRadius={5}
-          px={3}
-          w={250}  />
+          px={2}
+          py={2}
+          w={350}  />
           </Link>  
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -69,37 +73,7 @@ import {
             </Flex>
           </Flex>
   
-          <Stack
-            flex={{ base: 1, md: 0 }}
-            justify={'flex-end'}
-            direction={'row'}
-            spacing={6}>
-            <Button
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={'white'}
-              bg={'blue.400'}
-              ml={5}
-              href={'/'}
-              _hover={{
-                bg: 'pink.300',
-              }}>
-              Sign In
-            </Button>
-            <Button
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={'white'}
-              bg={'pink.400'}
-              href={'/'}
-              _hover={{
-                bg: 'pink.300',
-              }}>
-              Sign Up
-            </Button>
-          </Stack>
+           
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>
@@ -115,7 +89,7 @@ import {
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
     return (
-      <Stack direction={'row'} spacing={4}>
+      <Stack direction={'row'} spacing={4} alignItems={'center'} ml={10} >
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -123,7 +97,7 @@ import {
                 <Link
                   p={2}
                   href={navItem.href ?? '#'}
-                  fontSize={'sm'}
+                  fontSize={'lg'}
                   fontWeight={500}
                   color={linkColor}
                   _hover={{
@@ -207,7 +181,7 @@ import {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Stack spacing={4} onClick={children && onToggle}>
+      <Stack  spacing={4} onClick={children && onToggle}>
         <Flex
           py={2}
           as={Link}
@@ -262,51 +236,139 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: 'Zum Shop',
-      href: '/shop',
-    },
-    {
-      label: 'Maschinen/Zubehör',
-      href: '/maschine',
+      label: 'Shop', 
       children: [
         {
-          label: 'Kaffeevollautomaten',
-          subLabel: 'Perfekter Qualität auf Knopfdruck.',
-          href: '/mashcineCategory/vollautomaten',
+          label: 'Zum Shop',  
+          href: '/shop',
         },
         {
-          label: 'Espresso-Pads',
-          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
+          label: 'Filterkaffee',  
+          href: '/category/filterkaffee',
+        },
+        {
+          label: 'Espresso-Pads',  
+          href: '/category/espresso-pads',
+        },
+        {
+          label: 'Kaffeebohnen ',  
+          href: '/category/kaffeebohnen',
+        },
+        {
+          label: 'Kakao ',  
+          href: '/category/kakao',
+        },
+        {
+          label: 'Cappuccino ',  
+          href: '/category/cappuccino',
+        },
+        {
+          label: 'Tee ',  
+          href: '/category/tee',
+        },
+        {
+          label: 'Milch, Zucker & Süßstoff ',  
+          href: '/category/milch',
+        },
+        {
+          label: 'Gebäck ',  
+          href: '/category/geback',
+        },
+        {
+          label: 'Schokoladiges & Salziges ',  
+          href: '/category/schocolade',
+        },
+        {
+          label: 'Reinigung ',  
+          href: '/category/reinigung',
+        },
+        {
+          label: 'Tafelgeschirr ',  
+          href: '/category/tafelgeschirr',
+        },
+        {
+          label: 'Küchenartikel ',  
+          href: '/category/kuchenartikel',
+        },
+
+      ],
+    },
+    {
+      label: 'Maschinen/Zubehör', 
+      children: [
+        {
+          label: 'Alle Maschinen Kategorien',
+          subLabel: 'Perfekter Qualität auf Knopfdruck.',
+          href: '/maschine',
+          
+        },
+        {
+          label: 'Espresso-Pads-Maschine',
+          subLabel: 'Perfekter Qualität auf Knopfdruck.',
           href: '/mashcineCategory/padmashine',
+          
+        },
+        {
+          label: 'Vollautomaten',
+          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
+          href: '/mashcineCategory/vollautomaten',
         },
         {
           label: 'Table Top',
           subLabel: 'Standautomaten ideal für Büros, Praxen und Werkstätten. Modern & praktisch.',
           href: '/mashcineCategory/tabletop',
         },
+        {
+          label: 'Jura Kaffeevollautomaten ', 
+          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
+          href: '/mashcineCategory/jura',
+        },
+        {
+          label: 'Rex Royal Kaffeevollautomaten ', 
+          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
+          href: '/mashcineCategory/rexroyal',
+        },
+        {
+          label: 'LaCimbali Kaffeevollautomaten ', 
+          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
+          href: '/mashcineCategory/lacimbali',
+        },
+        {
+          label: 'Wasserspender Stilvoll ', 
+          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
+          href: '/mashcineCategory/wasser',
+        },
+        {
+          label: 'Wasserspender spaqa Auftischgeräte & Tower ', 
+          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
+          href: '/mashcineCategory/wasserspender',
+        },
+        {
+          label: 'Saftpressen und Entsafter ', 
+          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
+          href: '/mashcineCategory/saft',
+        },
+        {
+          label: 'Zubehör ', 
+          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
+          href: '/mashcineCategory/zubehor',
+        },
       ],
     },
     {
-      label: 'Einkaufsberatung',
-      children: [
-        {
-          label: 'Weshalb KSB?',
-          subLabel: 'Find your dream design job',
-          href: '#',
-        },
-        {
-          label: 'Online einkaufen / Konditionen',
-          subLabel: 'An exclusive list for contract work',
-          href: '#',
-        },
-      ],
+      label: 'Kaffee-Service',
+      href: '/kaffeeService',
     },
     {
       label: 'Eigenschaften',
-      href: '#',
+      href: '/service',
     },
     {
       label: 'Über KSB',
-      href: '#',
+      href: '/about',
+    },
+    {
+      label: 'Kontakt',
+      href: 'contact',
     },
   ];

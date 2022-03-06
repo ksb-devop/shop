@@ -3,15 +3,20 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Hero from '../componenets/Hero'
 import NavBar from '../componenets/NavBar.tsx'
-import { Heading, Text, Box, Image,Link  } from '@chakra-ui/react'
+import { Heading, Text, Box, Image,Link,
+  Center,
+  Grid,
+ 
+} from '@chakra-ui/react'
 import Categories from '../componenets/Categories'
 import SideCategories from '../componenets/SideCategories'
 import { getCategories } from '../services'
+import { useRouter } from 'next/router'
 
-export default function Shop({categories}) {
+ function Shop({categories}) {
 
-    console.log(categories);
-
+    const router = useRouter();
+   
   return (
     <div >
       <Head>
@@ -21,52 +26,72 @@ export default function Shop({categories}) {
       </Head>
 
       <main className={styles.main}>
-        <NavBar/>
-        <div className={styles.cateArea} >
-        <SideCategories  />
+      <SideCategories  />
         
-        <div className={styles.shopPage} >
-            <h1 className={styles.shopTitle}>Nach Kategorien durchsuchen</h1>
+        <Box
+         width={{ base: '90%', md: '80%', lg: '80%' }}
+        my={'90px'}
+        px={{ base: 10, md: 20, lg: 20 }}
+        pb={{ base: 10, md: 10, lg: 20 }}
+        borderRadius={10}
+        boxShadow={'dark-lg'} > 
+      
+       <Text 
+       textAlign={'center'}
+       fontSize={{ base: '3xl', md: '3xl', lg: '5xl' }}
+       pb={10}
+       pt={5}
+       >Nach Kategorien durchsuchen...</Text>
 
-            
+        <Center >
+          <Grid
+          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }} gap={4} w={'100%'} 
+          >
 
-     
-
-        <div  className={styles.categrid}>
         {categories.map((categories, index) => (
-            <>
+           
              
 
-              <Box
-        as='button'
-        maxH={250}
-        maxW={250}
-        >
-        <Link href={`/category/${categories.node.slug}`} > 
-        <Image 
-        src={categories.node.image.url} 
-        borderRadius={5}
+       <Box
+  
+       key={categories.node.slug}
+       boxShadow={'dark-lg'}
+        backgroundImage={categories.node.image.url}
         backgroundSize='cover'
-        h={44}
-        alt={''} />
+        as='button'
+        my={{ base: 2, md: 10, lg: 10 }}
+        h={250}
+        w={250}
+        borderRadius={10}
+        onClick={async () => { 
+          router.push(`/category/${categories.node.slug}`);
+
+          }}
+        >
+         
+         
         <Text
+        key={categories.node.slug}
         textAlign={'center'}
-        backgroundColor={'blue.400'}
+        backgroundColor={'white'}
+        opacity={'0.9'}
+        fontSize={'3xl'}
+        fontWeight={'semibold'}
         my={2}
         borderRadius={5}
         >{categories.node.name}</Text>
-        </Link>   
+          
         </Box>
-        </>
+         
             ))}
-        </div>
-    </div>
-    </div>
+            </Grid>
+        </Center>
+    
+    </Box>
+     
       </main>
 
-      <footer className={styles.footer}>
-      Kaffee-Service Berlin Peter Ganss GmbH
-      </footer>
+       
     </div>
   )
 }
@@ -79,3 +104,8 @@ export async function getStaticProps() {
       props: {  categories },
     };
   }
+
+
+
+  export default Shop;
+
