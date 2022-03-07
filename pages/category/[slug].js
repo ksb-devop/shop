@@ -5,18 +5,21 @@ import styles from '../../styles/Home.module.css'
 import NavBar from '../../componenets/NavBar.tsx'
 import { Heading, Text, Box, Image, Link, Button,  Center,
     useColorModeValue,
-    Stack, } from '@chakra-ui/react'
-import ProductCard from '../../componenets/Categories'
+    Stack,
+    Grid, } from '@chakra-ui/react'
+import ProductCard from '../../componenets/ProductWidget'
 import { getCategoryName, getCategoryProduct } from '../../services/index'
 import SideCategories from '../../componenets/SideCategories'
 import Categories from '../../componenets/Categories'
+import { useRouter } from 'next/router'
 
 
 
 export default function CategoryP({products, categories}) {
 
-    console.log(categories)
 
+  const router = useRouter();
+     
   return (
     <div >
       <Head>
@@ -26,14 +29,24 @@ export default function CategoryP({products, categories}) {
       </Head>
 
       <main className={styles.main}>
-        <NavBar/> 
+          
         <SideCategories  />
-        <div className={styles.categoryPageGrid}>
-          <Categories/>
-        <div className={styles.shopPage} >
+        <Grid
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }} gap={4} w={'90%'} 
+        >
+          <Categories/> 
+          <Box 
+          boxShadow={'dark-lg'}
+          borderRadius={10}
+          p={12}
+          pl={{ base: 12, md: 115 }}
+          mx={{ base: 0, md: '-50%' }}
+          w={{ base: '100%', md: '-150%' }}
+          my={'20'}
+          >
 
         {products.slice(0,1).map((products) => (
-        <h1 className={styles.shopTitle} key='' >{products.node.category.name}</h1>
+        <h1 className={styles.shopTitle} key={products.node.category.slug} >{products.node.category.name}</h1>
 
         ))}
 
@@ -41,38 +54,40 @@ export default function CategoryP({products, categories}) {
         
         <div  className={styles.productgrid} >
           {products.map((products) => (
-              
-            <>
-           
+            
            
 
-        <Center py={12} key={''} >
+        <Center 
+        key={products.node.slug}
+        py={12}   >
       <Box
-      key={''}
+       
+       
         role={'group'}
-        p={6}
-        maxW={'420px'}
-        w={'full'}
+        p={2}
+        maxW={'420px'} 
+        mt={-16}
+        py={10}
+        w={'full'} 
         bg={useColorModeValue('white', 'gray.800')}
-        boxShadow={'2xl'}
+        boxShadow={'dark-lg'}
         rounded={'lg'}
         pos={'relative'}
         zIndex={1}>
 
-        <Link href={`/product/${products.node.slug}`} >
+       
 
         <Box
-          rounded={'lg'}
-          mt={-12}
+          rounded={'lg'} 
           pos={'relative'}
-          height={'230px'}
+          height={'full'}
           _after={{
             transition: 'all .3s ease',
             content: '""',
             w: 'full',
             h: 'full',
             pos: 'absolute',
-            top: 5,
+            top: 3,
             left: 0,
             backgroundImage: `url(${products.node.image.url})`,
             filter: 'blur(15px)',
@@ -86,37 +101,41 @@ export default function CategoryP({products, categories}) {
           <Image
             rounded={'lg'}
             height={230}
-            width={282}
+            width={300}
             objectFit={'contain'}
             src={products.node.image.url}
           />
         </Box>
-
-        </Link>
-        <Stack pt={10} align={'center'}>
+ 
+        <Stack pt={4} align={'center'}>
           
           <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
           {products.node.title}
           </Heading>
+          
            
-          <Button colorScheme='blue'>Add to Kart</Button>
+          <Button 
+          onClick={async () => { 
+            router.push(`/product/${products.node.slug}`);
+  
+            }}
+          colorScheme='blue'>Mehr-Info</Button>
         </Stack>
       </Box>
+       
     </Center>
-            </>
+            
           ))}
         </div>
+        
+        </Box>
+         
 
-        </div>
 
-
-        </div>
+        </Grid>
     
       </main>
-
-      <footer className={styles.footer}>
-      Kaffee-Service Berlin Peter Ganss GmbH
-      </footer>
+ 
     </div>
   )
 }

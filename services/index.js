@@ -120,6 +120,10 @@ export const getCategories = async () => {
         product(where: {slug: $slug}) {
           title
           excerpt
+          taste
+          type
+          texture
+          size
           image {
             url
           } 
@@ -131,6 +135,13 @@ export const getCategories = async () => {
           category {
             name
             slug
+            product {
+              title
+              slug
+        image {
+          url
+        }
+            }
           }
         }
       }
@@ -332,4 +343,26 @@ export const getCategories = async () => {
     const result = await request(graphqlAPI, query);
   
     return result.ordersConnection.edges;
+  };
+
+
+  export const getSimilarProducts = async () => {
+    const query = gql`
+       
+      query getSimilarProducts($slug: String!, $categories: [String!]) {
+        products(where: {category: $category}) {
+          id
+          title
+          slug
+          category {
+      id
+      title
+      slug
+    }
+        }
+      
+    `;
+    const result = await request(graphqlAPI, query,  );
+  
+    return result.products;
   };

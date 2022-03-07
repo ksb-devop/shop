@@ -1,65 +1,154 @@
+import React from 'react';
 import {
-    Button,
-    Flex,
-    Heading,
-    Image,
-    Stack,
-    Text,
-    useBreakpointValue,
-  } from '@chakra-ui/react';
-  
-  export default function Hero() {
-    return (
-      <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-        <Flex p={8} flex={1} align={'center'} justify={'center'}>
-          <Stack spacing={6} w={'full'} maxW={'lg'}>
-            <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-              <Text
-                as={'span'}
-                position={'relative'}
-                _after={{
-                  content: "''",
-                  width: 'full',
-                  height: useBreakpointValue({ base: '20%', md: '30%' }),
-                  position: 'absolute',
-                  bottom: 1,
-                  left: 0,
-                  bg: 'blue.400',
-                  zIndex: -1,
-                }}>
-                Kaffee-Service Berlin
-              </Text>
-              <br />{' '}
-              <Text color={'blue.400'} as={'span'}>
-              Peter Ganss GmbH 
-              </Text>{' '}
-            </Heading>
-            <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            Von professionellen Kaffeemaschinen für Filterkaffee über 
-            Kaffeevollautomaten und Espressomaschinen für besten Espresso, 
-            leckeren Cappuccino und cremigen Latte Macchiato bis zu TableTop-Automaten.
-            </Text>
-            <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-              <Button
-                rounded={'full'}
-                bg={'blue.400'}
-                color={'white'}
-                _hover={{
-                  bg: 'blue.500',
-                }}>
-                Zum Shop
-              </Button>
-              <Button rounded={'full'}>Über Uns</Button>
-            </Stack>
-          </Stack>
-        </Flex>
-        <Flex flex={1}>
-          <Image
-            alt={'Login Image'}
-            objectFit={'cover'}
-            src={'/kfb.jpg'}
-          />
-        </Flex>
-      </Stack>
-    );
-  }
+  Box,
+  IconButton,
+  useBreakpointValue,
+  Stack,
+  Heading,
+  Text,
+  Container,
+} from '@chakra-ui/react';
+// Here we have used react-icons package for the icons
+import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
+// And react-slick as our Carousel Lib
+import Slider from 'react-slick';
+
+// Settings for the slider
+const settings = {
+  dots: true,
+  arrows: false,
+  fade: true,
+  infinite: true,
+  autoplay: true,
+  speed: 500,
+  autoplaySpeed: 5000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
+export default function CaptionCarousel() {
+  // As we have used custom buttons, we need a reference variable to
+  // change the state
+  const [slider, setSlider] = React.useState('Slider');
+
+  // These are the breakpoints which changes the position of the
+  // buttons as the screen size changes
+  const top = useBreakpointValue({ base: '90%', md: '50%' });
+  const side = useBreakpointValue({ base: '30%', md: '40px' });
+
+  // This list contains all the data for carousels
+  // This can be static or loaded from a server
+  const cards = [
+    {
+      title: 'Kaffee Pads- Ersatz Werbung',
+      text:
+        "Hochwertiger italienischer Spitzenkaffee in Espresso-Pads",
+      image:
+        '/a.jpg',
+    },
+    {
+      title: 'Kaffeebohnen Ersatz Werbung',
+      text:
+        "Frisch für Sie geröstete Kaffeebohnen von unserem Röster Marcafé aus Italien ",
+      image:
+      '/b.jpg',
+    },
+    {
+      title: 'Kaffeevollautomaten Ersatz Werbung',
+      text:
+        "Nach langjähriger Erfahrung in der Kaffeeversorgung am Arbeitsplatz, haben wir für jedes Büro die passende Lösung.",
+      image:
+      '/e.jpg',
+    },
+    {
+      title: 'Facebook Instagram Ersatz Werbung',
+      text:
+        "Nach langjähriger Erfahrung in der Kaffeeversorgung am Arbeitsplatz, haben wir für jedes Büro die passende Lösung.",
+      image:
+      '/i.jpg',
+    },
+  ];
+
+  return (
+    <Box
+      position={'relative'}
+      mt={5}
+      height={'500px'}
+      width={{ base: '100%', md: '80%', lg: '80%' }}
+      overflow={'hidden'}>
+      {/* CSS files for react-slick */}
+      <link
+        rel="stylesheet"
+        type="text/css"
+        charSet="UTF-8"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+      />
+      {/* Left Icon */}
+      <IconButton
+        aria-label="left-arrow"
+        variant="ghost"
+        position="absolute"
+        left={30}
+        top={250}
+        transform={'translate(0%, -50%)'}
+        zIndex={2}
+        onClick={() => slider?.slickPrev()}>
+        <ArrowLeftIcon size="40px" />
+      </IconButton>
+      {/* Right Icon */}
+      <IconButton
+        aria-label="right-arrow"
+        variant="ghost"
+        position="absolute"
+        right={30}
+        top={250}
+        transform={'translate(0%, -50%)'}
+        zIndex={2}
+        onClick={() => slider?.slickNext()}>
+        <ArrowRightIcon size="40px" />
+      </IconButton>
+      {/* Slider */}
+      <Slider {...settings} ref={(slider) => setSlider(slider)}>
+        {cards.map((card, index) => (
+          <Box
+            key={index}
+            height={700}
+            position="relative"
+            backgroundPosition="center"
+            backgroundRepeat="no-repeat"
+            backgroundSize='cover'
+            backgroundImage={`url(${card.image})`}>
+            {/* This is the block for the caption */}
+            <Container size="container.lg" height="600px" position="relative">
+              <Stack
+                backgroundColor={'gray.300'}
+                spacing={6}
+                width={{ base: '100%', md: '100%', lg: '100%' }}
+                opacity={0.9}
+                position="fixed"
+                bottom={40}
+                left={0} 
+                p={5}
+                borderRadius={5}
+                transform="translate(0, -50%)">
+                <Heading 
+                
+                fontSize={{ base: 'lg', md: '4xl', lg: '5xl' }}>
+                  {card.title}
+                </Heading>
+                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
+                  {card.text}
+                </Text>
+              </Stack>
+            </Container>
+          </Box>
+        ))}
+      </Slider>
+    </Box>
+  );
+}

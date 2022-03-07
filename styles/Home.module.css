@@ -2,13 +2,13 @@
   padding: 0 2rem;
 }
 
-.categoryPageGrid{
+.categoryPageGrid {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-.categoryList{
+.categoryList {
   align-items: center;
   width: 15%;
   display: flex;
@@ -23,26 +23,37 @@
   border: darkgray 1px solid;
 }
 
-
 .categrid {
   width: 1000px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 70px;
+  margin-left: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 60px;
   margin-bottom: 50px;
+  padding-left: 50px;
 }
+
+.maschinecategrid {
+  width: 1000px;
+  display: grid;
+  margin-left: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding-left: 40px;
+}
+
 .cateArea {
   display: flex;
   flex-direction: row;
 }
 
 .shopPage {
-  border: darkgray 1px solid;
-  border-radius: 9px;
   padding: 5%;
-  margin-top: 70px;
-  margin-bottom: 50px;
+  width: 1400px;
+  margin-bottom: 0px;
 }
 
 .productgrid {
@@ -57,7 +68,6 @@
 
 .main {
   min-height: 100vh;
-  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -94,8 +104,9 @@
 
 .shopTitle {
   margin: 0;
-  line-height: 1.15;
-  font-size: 2rem;
+  line-height: 1;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 .title,

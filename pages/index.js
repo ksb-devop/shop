@@ -2,7 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Hero from '../componenets/Hero'
-import NavBar from '../componenets/NavBar.tsx'
+import AboutGrid from '../componenets/AboutGrid'
+import StatGrid from '../componenets/StatGrid'
+import ServiceGrid from '../componenets/ServiceGrid.tsx'
+import MaschineGrid from '../componenets/MaschineGrid.tsx'
+import Form from '../componenets/Form.tsx'
 
 export default function Home() {
   return (
@@ -14,13 +18,16 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <NavBar/>
+      
         <Hero/>
+        <AboutGrid/>
+        <MaschineGrid/>
+        <StatGrid/>
+        <ServiceGrid/>
+        <Form/>
       </main>
 
-      <footer className={styles.footer}>
-      Kaffee-Service Berlin Peter Ganss GmbH
-      </footer>
+      
     </div>
   )
 }
