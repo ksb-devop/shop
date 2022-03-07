@@ -31,7 +31,7 @@ import { useRouter } from 'next/router'
         <Box
          width={{ base: '90%', md: '80%', lg: '80%' }}
         my={'90px'}
-        px={{ base: 10, md: 20, lg: 20 }}
+        px={{ base: 10, md: 20, lg: 28 }}
         pb={{ base: 10, md: 10, lg: 20 }}
         borderRadius={10}
         boxShadow={'dark-lg'} > 

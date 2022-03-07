@@ -360,6 +360,10 @@ import {
       href: '/kaffeeService',
     },
     {
+      label: 'Espresso-Service',
+      href: '/kaffeeService',
+    },
+    {
       label: 'Eigenschaften',
       href: '/service',
     },
