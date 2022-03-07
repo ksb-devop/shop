@@ -235,6 +235,11 @@ import {
   }
   
   const NAV_ITEMS: Array<NavItem> = [
+
+    {
+      label: 'Home',
+      href: '/',
+    },
     {
       label: 'Shop', 
       children: [
@@ -294,7 +299,7 @@ import {
       ],
     },
     {
-      label: 'Maschinen/Zubehör', 
+      label: 'Büro Maschinen', 
       children: [
         {
           label: 'Alle Maschinen Kategorien',
@@ -361,16 +366,13 @@ import {
     },
     {
       label: 'Espresso-Service',
-      href: '/kaffeeService',
+      href: '/espressoService',
     },
     {
-      label: 'Eigenschaften',
+      label: 'Über Unseren Service',
       href: '/service',
     },
-    {
-      label: 'Über KSB',
-      href: '/about',
-    },
+    
     {
       label: 'Kontakt',
       href: 'contact',

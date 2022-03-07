@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactNode } from 'react';
-import Head from 'next/head';
+import Head from 'next/head'; 
 import {
   Box,
   Heading,
@@ -18,6 +18,7 @@ import {
 
 import StatGrid from '../componenets/StatGrid';
 import Form from '../componenets/Form'
+import { useRouter } from 'next/router';
 
 
 const Arrow = createIcon({
@@ -80,6 +81,11 @@ const Arrow = createIcon({
   
 
 const service = () => {
+
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const router = useRouter();
+
   return (
     <div>
         <Head>
@@ -114,6 +120,10 @@ const service = () => {
             alignSelf={'center'}
             position={'relative'}>
             <Button
+              onClick={async () => { 
+                router.push('/contact');
+      
+                }}
               colorScheme={'green'}
               bg={'green.400'}
               rounded={'full'}

@@ -29,6 +29,7 @@ import {
   import KaffeeServiceGrid from '../componenets/KaffeeServiceGrid.tsx'
 import { urlObjectKeys } from 'next/dist/shared/lib/utils';
 import KaffeeService from '../componenets/KaffeeService';
+import { useRouter } from 'next/router';
 
 
   const Arrow = createIcon({
@@ -47,6 +48,11 @@ import KaffeeService from '../componenets/KaffeeService';
 
 
 const kaffeeService = () => {
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const router = useRouter();
+
+  
   return (
     <div>
        <Head>
@@ -84,6 +90,10 @@ const kaffeeService = () => {
             alignSelf={'center'}
             position={'relative'}>
             <Button
+            onClick={async () => { 
+              router.push('/contact');
+    
+              }}
               colorScheme={'green'}
               bg={'green.400'}
               rounded={'full'}
