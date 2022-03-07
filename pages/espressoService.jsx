@@ -170,7 +170,7 @@ Espresso-Service || Kaffee-Service Berlin Peter Ganss GmbH</title>
          
         <Box 
        boxShadow={'dark-lg'}
-        backgroundImage={'/espressoService/em.jpg'}
+        backgroundImage={'/espressoService/km2.jpg'}
         backgroundSize='cover'
         as='button'
         h={{ base: 140, md: 250, lg: 280 }}
