@@ -71,6 +71,7 @@ export default function CategoryP({mashcinen, categories}) {
         role={'group'}
         p={6} 
         w={'full'}
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         bg={useColorModeValue('white', 'gray.800')}
         boxShadow={'2xl'}
         rounded={'lg'}

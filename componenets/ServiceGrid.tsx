@@ -56,7 +56,7 @@ import {
   }
   
   function TestmonialCard(props: TestimonialCardProps) {
-    const {   title, text,   id, index } = props;
+    const {   title, text,   id,   } = props;
     return (
     
       <Flex
@@ -83,8 +83,7 @@ import {
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           top: 0,
-          left: 0,
-          backgroundImage: backgrounds[index % 4],
+          left: 0, 
         }}>
         <Flex
           direction={'column'}
@@ -148,7 +147,7 @@ import {
           mt={16}
           mx={'auto'}>
           {features.map((cardInfo, index) => (
-            <TestmonialCard {...cardInfo} index={index} key={index} />
+            <TestmonialCard {...cardInfo}   key={index} />
           ))}
         </SimpleGrid>
        

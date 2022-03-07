@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react';
 
 import StatGrid from '../componenets/StatGrid';
-import Form from '../componenets/Form.tsx'
+import Form from '../componenets/Form'
 
 
 const Arrow = createIcon({
@@ -127,6 +127,7 @@ const service = () => {
             <Box>
               <Icon
                 as={Arrow}
+                // eslint-disable-next-line react-hooks/rules-of-hooks
                 color={useColorModeValue('gray.800', 'gray.300')}
                 w={71}
                 position={'absolute'}

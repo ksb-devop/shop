@@ -69,6 +69,7 @@ export default function CategoryP({products, categories}) {
         mt={-16}
         py={10}
         w={'full'} 
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         bg={useColorModeValue('white', 'gray.800')}
         boxShadow={'dark-lg'}
         rounded={'lg'}
