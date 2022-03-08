@@ -21,7 +21,7 @@ import { useRouter } from 'next/router';
 
 <Flex
 my={20}
-w={{ base: '100%' , md: '80%' }}
+w={{ base: '100%' , md: '110%' }}
 h={{ base: '100%' , md: '100%' }}
 backgroundImage={'/ap.jpg'}
 backgroundSize={'cover'}
@@ -72,10 +72,10 @@ backgroundPosition={'center center'}>
     
                   }}
                 rounded={'full'}
-                bg={'blue.400'}
+                bg={'green.400'}
                 color={'white'}
                 _hover={{
-                  bg: 'blue.500',
+                  bg: 'green.500',
                 }}>
                 Kaffee-Shop
               </Button>
@@ -92,10 +92,10 @@ backgroundPosition={'center center'}>
               <Button 
                 size={'md'}
                onClick={async () => { 
-                router.push('/about');
+                router.push('/service');
   
                 }}
-              rounded={'full'}>Über Uns</Button> 
+              rounded={'full'}>Über Unseren Service</Button> 
 
               
             </Stack>

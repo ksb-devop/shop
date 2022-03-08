@@ -31,7 +31,7 @@ import {
       backgroundSize={'cover'}  
       borderRadius={5}
       filter={'blur'}
-      position={'relative'} w={'full'} >
+      position={'relative'} w={'110%'} >
         <Center
         py={10}
         >
@@ -152,7 +152,8 @@ import {
                 </Stack>
                
                 <Stack>
-                 <Select placeholder='Ihre aktuelle Kaffeeversorgung'>
+                 <Select  
+                 focusBorderColor='green.400' placeholder='Ihre aktuelle Kaffeeversorgung'>
                  <option value='option1'>Haushaltskannen</option>
                  <option value='option2'>Kapselmaschine</option>
                  <option value='option3'>Kaffeeautomat</option>
@@ -161,15 +162,15 @@ import {
                 
                  <Text>Haben Sie bereits einen Service-Vertrag?</Text>  
                 <Stack spacing={5} direction='row'>
-                <Switch  colorScheme='blue' >
+                <Switch  colorScheme='green' >
                  Ja
                 </Switch >
-                <Switch  colorScheme='blue'  >
+                <Switch  colorScheme='green'  >
                  Nein
                 </Switch >
                 </Stack>
  
-                <Select placeholder='Ihr Kaffeeverbrauch' pt={5} >
+                <Select focusBorderColor='green.400'placeholder='Ihr Kaffeeverbrauch' pt={5}   >
                 <option value='option1'> Keinen Kaffeeverbrauch </option>
                 <option value='option2'> 2 - 4 Haushaltskannen am Tag </option>
                 <option value='option3'>5 - 7 Haushaltskannen am Tag </option>
@@ -177,7 +178,7 @@ import {
                 <option value='option3'>12 und mehr Haushaltskannen am Tag </option>
                </Select>
  
-               <Select placeholder='Ihr Espresso- und Cappuccinoverbrauch' pt={5} >
+               <Select focusBorderColor='green.400'placeholder='Ihr Espresso- und Cappuccinoverbrauch' pt={5} >
                <option value='option1'> keinen Espressoverbrauch </option>
                <option value='option2'> 7 - 20 Tassen am Tag </option>
                <option value='option3'>20 - 30 Tassen am Tag</option>
@@ -193,7 +194,7 @@ import {
               </Grid>
 
 
-              <Textarea placeholder='Kommentar / Frage' mt={5}  />
+              <Textarea focusBorderColor='green.400' placeholder='Kommentar / Frage' mt={5}  />
 
               <Checkbox mt={5}  >Ich habe die Datenschutzbestimmungen gelesen und einverstanden.</Checkbox>
 
@@ -201,10 +202,10 @@ import {
                 fontFamily={'heading'}
                 mt={8}
                 w={'full'}
-                bgGradient="linear(to-r, red.400,pink.400)"
+                bgGradient="linear(to-r, green.400,green.800)"
                 color={'white'}
                 _hover={{
-                  bgGradient: 'linear(to-r, red.400,pink.400)',
+                  bgGradient: 'linear(to-r, green.800,green.400)',
                   boxShadow: 'xl',
                 }}>
                 Submit

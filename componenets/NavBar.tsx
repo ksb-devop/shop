@@ -60,7 +60,8 @@ import {
           flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
          <Link href='/' >
          <Image  
-          src='/logo2.png' 
+          backgroundColor={'blackAlpha.600'}
+          src='/logo.png' 
           alt='logo' 
           borderRadius={5}
           px={2}

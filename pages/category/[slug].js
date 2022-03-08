@@ -32,7 +32,7 @@ export default function CategoryP({products, categories}) {
           
         <SideCategories  />
         <Grid
-        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }} gap={4} w={'90%'} 
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }} gap={4} w={{ base: '100%', md: '100%' }} 
         >
           <Categories/> 
           <Box 
@@ -41,7 +41,7 @@ export default function CategoryP({products, categories}) {
           p={12}
           pl={{ base: 12, md: 115 }}
           mx={{ base: 0, md: '-50%' }}
-          w={{ base: '100%', md: '-150%' }}
+          w={{ base: '100%', md: '135%' }}
           my={'20'}
           >
 

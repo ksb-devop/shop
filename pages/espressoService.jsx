@@ -73,10 +73,10 @@ Espresso-Service || Kaffee-Service Berlin Peter Ganss GmbH</title>
       
                 }}
               rounded={'full'}
-              bg={'blue.400'}
+              bg={'green.400'}
               color={'white'}
               _hover={{
-                bg: 'green.500',
+                bg: 'green.700',
               }}>
               Kontakt
             </Button> 
