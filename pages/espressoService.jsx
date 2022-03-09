@@ -122,7 +122,7 @@ Espresso-Service || Kaffee-Service Berlin Peter Ganss GmbH</title>
          
         borderRadius={10}
         onClick={async () => { 
-          router.push(`/`);
+          router.push('/mashcineCategory/padmashine');
 
           }}
         >
@@ -150,7 +150,7 @@ Espresso-Service || Kaffee-Service Berlin Peter Ganss GmbH</title>
          
         borderRadius={10}
         onClick={async () => { 
-          router.push(`/`);
+          router.push('/mashcineCategory/jura');
 
           }}
         >
@@ -178,7 +178,7 @@ Espresso-Service || Kaffee-Service Berlin Peter Ganss GmbH</title>
          
         borderRadius={10}
         onClick={async () => { 
-          router.push(`/`);
+          router.push('/mashcineCategory/padmashine');
 
           }}
         >

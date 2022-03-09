@@ -248,10 +248,7 @@ import {
           label: 'Zum Shop',  
           href: '/shop',
         },
-        {
-          label: 'Filterkaffee',  
-          href: '/category/filterkaffee',
-        },
+         
         {
           label: 'Espresso-Pads',  
           href: '/category/espresso-pads',

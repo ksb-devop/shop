@@ -84,7 +84,7 @@ backgroundPosition={'center center'}>
               
                size={'md'}
                onClick={async () => { 
-                router.push('/about');
+                router.push('/contact');
   
                 }}
               rounded={'full'}>Kontakt</Button>
