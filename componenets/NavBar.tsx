@@ -185,8 +185,7 @@ import {
       <Stack  spacing={4} onClick={children && onToggle}>
         <Flex
           py={2}
-          as={Link}
-          href={href ?? '#'}
+          as={Link} 
           justify={'space-between'}
           align={'center'}
           _hover={{
@@ -243,6 +242,7 @@ import {
     },
     {
       label: 'Shop', 
+      href: '/shop',
       children: [
         {
           label: 'Zum Shop',  
@@ -301,6 +301,7 @@ import {
     },
     {
       label: 'Büro Maschinen', 
+      href: '/maschine',
       children: [
         {
           label: 'Alle Maschinen Kategorien',

@@ -26,13 +26,20 @@ import {
     BreadcrumbLink,
     BreadcrumbSeparator, 
     Tabs, TabList, TabPanels, Tab, TabPanel, 
-    MdCheckCircle,
+    
    
     ListIcon,
     OrderedList,
     UnorderedList,
     Grid,
   } from '@chakra-ui/react';
+
+  import {
+    MdCheckCircle,
+    CloseIcon,
+    ChevronDownIcon,
+    ChevronRightIcon,
+  } from '@chakra-ui/icons';
 
 import { getMaschineDetails, getMashcinen } from '../../services/index'
 import SideCategories from '../../componenets/SideCategories'

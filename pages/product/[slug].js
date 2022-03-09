@@ -22,6 +22,10 @@ import {
     VisuallyHidden,
     List,
     ListItem,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbSeparator, 
   } from '@chakra-ui/react';
 
 import { getProductDetails, getProducts } from '../../services/index'
@@ -57,12 +61,31 @@ export default function ProductPage({product, products}) {
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 18, md: 24 }}>
-        <Flex  >
+        <Flex flexDirection={'column'}  >
+
+        <Breadcrumb 
+        pl={10}
+        pb={10}
+        fontWeight='medium' fontSize='sm'>
+        <BreadcrumbItem>
+        <BreadcrumbLink href='/shop'>Shop</BreadcrumbLink>
+        </BreadcrumbItem>
+
+       <BreadcrumbItem>
+       <BreadcrumbLink href={`/category/${product.category.slug}`}> {product.category.name} </BreadcrumbLink>
+       </BreadcrumbItem>
+
+
+      <BreadcrumbItem isCurrentPage>
+      <BreadcrumbLink href='#'>{product.title}</BreadcrumbLink>
+      </BreadcrumbItem>
+      </Breadcrumb>
+
           <Image
             rounded={'md'}
             alt={'product image'}
             src={product.image.url}
-            fit={'cover'}
+            fit={'contain'}
             align={'center'}
             w={'100%'}
             h={{ base: '100%', sm: '400px', lg: '500px' }}
@@ -161,7 +184,8 @@ export default function ProductPage({product, products}) {
 
 {product.category.product.map((product) => (
   <>
-         <Box
+         <Box 
+         key={product.slug}
         role={'group'}
         display={'flex'}
         flexDirection={'column'}
@@ -181,7 +205,7 @@ export default function ProductPage({product, products}) {
             objectFit={'contain'}
             src={product.image.url}
           />
-        <Text key={product.slug}>{product.title}</Text>
+        <Text >{product.title}</Text>
         <Button 
           onClick={async () => { 
             router.push(`/product/${product.slug}`);

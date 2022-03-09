@@ -6,7 +6,8 @@ import NavBar from '../../componenets/NavBar.tsx'
 import { Heading, Text, Box, Image, Link, Button,  Center,
     useColorModeValue,
     Stack,
-    Grid, } from '@chakra-ui/react'
+    Grid,
+    Container, } from '@chakra-ui/react'
 import ProductCard from '../../componenets/ProductWidget'
 import { getCategoryName, getCategoryProduct } from '../../services/index'
 import SideCategories from '../../componenets/SideCategories'
@@ -38,21 +39,29 @@ export default function CategoryP({products, categories}) {
           <Box 
           boxShadow={'dark-lg'}
           borderRadius={10}
-          p={12}
-          pl={{ base: 12, md: 115 }}
+          display='flex'
+          flexDirection={'column'}
+          alignItems='center' 
           mx={{ base: 0, md: '-50%' }}
           w={{ base: '100%', md: '135%' }}
           my={'20'}
           >
 
         {products.slice(0,1).map((products) => (
-        <h1 className={styles.shopTitle} key={products.node.category.slug} >{products.node.category.name}</h1>
+        <Text
+        fontSize={'4xl'}
+        py={5}
+        key={products.node.category.slug} >{products.node.category.name}</Text>
 
         ))}
 
        
         
-        <div  className={styles.productgrid} >
+        <Grid
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={4} w={{ base: '100%', md: '100%' }} 
+        py={20}
+        px={10}
+        >
           {products.map((products) => (
             
            
@@ -100,6 +109,7 @@ export default function CategoryP({products, categories}) {
             },
           }}>
           <Image
+          alt={products.node.title}
             rounded={'lg'}
             height={230}
             width={300}
@@ -127,7 +137,7 @@ export default function CategoryP({products, categories}) {
     </Center>
             
           ))}
-        </div>
+        </Grid>
         
         </Box>
          
