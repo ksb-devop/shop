@@ -15,12 +15,13 @@ import {
   const Logo = (props: any) => {
     return (
       <Image  
-      src='/logo2.png' 
-      alt='logo' 
-      borderRadius={5}
-      px={2}
-      py={2}
-      w={{ base: 250, lg: 350 }}  />
+          backgroundColor={'blackAlpha.600'}
+          src='/logo.png' 
+          alt='logo' 
+          borderRadius={5}
+          px={2}
+          py={2}
+          w={350}  />
 
      
     );
@@ -44,8 +45,9 @@ import {
             <Stack align={'flex-start'}>
               <ListHeader>Produkt</ListHeader>
               <Link href={'/shop'}>Shop</Link>
+              <Link href={'/maschine'}>Büro Maschinen</Link>
               <Stack direction={'row'} align={'center'} spacing={2}>
-                <Link href={'/kaffeeService'}>Kaffee-Espresso-Sevice</Link>
+                <Link href={'/kaffeeService'}>Kaffee-Sevice</Link>
                 <Tag
                   size={'sm'}
                   bg={useColorModeValue('green.300', 'green.800')}
@@ -54,15 +56,25 @@ import {
                   Büro
                 </Tag>
               </Stack>
-              <Link href={'/maschine'}>Maschinen/Zubehör</Link>
+              <Stack direction={'row'} align={'center'} spacing={2}>
+                <Link href={'/espressoService'}>Espresso-Sevice</Link>
+                <Tag
+                  size={'sm'}
+                  bg={useColorModeValue('green.300', 'green.800')}
+                  ml={2}
+                  color={'white'}>
+                  Büro
+                </Tag>
+              </Stack>
+              
               <Link href={'#'}>Preisgestaltung</Link>
-              <Link href={'#'}>Dokumente</Link>
+             
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Firma</ListHeader>
-              <Link href={'/about'}>Über Uns</Link>
-              <Link href={'/service'}>Eigenschaften</Link>
+              <Link href={'/about'}>Über Uns</Link> 
               <Link href={'/contact'}>Kontakt</Link> 
+              <Link href={'#'}>Dokumente</Link>
               <Link href={'#'}>Angebot</Link>
             </Stack>
             <Stack align={'flex-start'}>

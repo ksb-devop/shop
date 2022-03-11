@@ -54,7 +54,7 @@ const padmashine = () => {
         w={{ sm: '100%', md: '70%' }}
         height={{ sm: '476px', md: '50rem' }}
         direction={{ base: 'column', md: 'row' }}
-        backgroundImage={'/maschine/pm1.jpg'} 
+        backgroundImage={'/padmaschine/pm1.jpg'} 
         backgroundSize={'cover'}
         boxShadow={'2xl'}
         padding={4}>
@@ -64,7 +64,7 @@ const padmashine = () => {
           opacity={0.95}
             objectFit="contain" 
             boxSize="100%"
-            src={'/maschine/pm1.jpg'}
+            src={'/padmaschine/pm1.jpg'}
           />
         </Flex>
         <Stack
@@ -138,7 +138,7 @@ const padmashine = () => {
         w={{ sm: '100%', md: '70%' }}
         height={{ sm: '476px', md: '46rem' }}
         direction={{ base: 'column', md: 'row' }}
-        backgroundImage={'/maschine/pm2.jpg'} 
+        backgroundImage={'/padmaschine/pm2.jpg'} 
         backgroundSize={'cover'}
         boxShadow={'2xl'}
         padding={4}>
@@ -212,7 +212,7 @@ const padmashine = () => {
             objectFit="contain"
             opacity={0.9}
             boxSize="100%"
-            src={'/maschine/pm2.jpg'}
+            src={'/padmaschine/pm2.jpg'}
           />
         </Flex>
 
@@ -226,7 +226,7 @@ const padmashine = () => {
         w={{ sm: '100%', md: '70%' }}
         height={{ sm: '476px', md: '40rem' }}
         direction={{ base: 'column', md: 'row' }}
-        backgroundImage={'/maschine/pm3.jpg'} 
+        backgroundImage={'/padmaschine/pm3.jpg'} 
         backgroundSize={'cover'}
         boxShadow={'2xl'}
         padding={4}>
@@ -236,7 +236,7 @@ const padmashine = () => {
           opacity={0.95}
             objectFit="contain" 
             boxSize="100%"
-            src={'/maschine/pm3.jpg'}
+            src={'/padmaschine/pm3.jpg'}
           />
         </Flex>
         <Stack

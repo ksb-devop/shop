@@ -307,22 +307,6 @@ import {
           
         },
         {
-          label: 'Espresso-Pads-Maschine',
-          subLabel: 'Perfekter Qualität auf Knopfdruck.',
-          href: '/mashcineCategory/padmashine',
-          
-        },
-        {
-          label: 'Vollautomaten',
-          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
-          href: '/mashcineCategory/vollautomaten',
-        },
-        {
-          label: 'Table Top',
-          subLabel: 'Standautomaten ideal für Büros, Praxen und Werkstätten. Modern & praktisch.',
-          href: '/mashcineCategory/tabletop',
-        },
-        {
           label: 'Jura Kaffeevollautomaten ', 
           subLabel: 'Italienischen Espresso, leckeren Cappuccino',
           href: '/mashcineCategory/jura',
@@ -330,28 +314,28 @@ import {
         {
           label: 'Rex Royal Kaffeevollautomaten ', 
           subLabel: 'Italienischen Espresso, leckeren Cappuccino',
-          href: '/mashcineCategory/rexroyal',
+          href: '/mashcineCategory/rex',
         },
         {
-          label: 'LaCimbali Kaffeevollautomaten ', 
-          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
-          href: '/mashcineCategory/lacimbali',
+          label: 'Espresso-Pads-Maschine',
+          subLabel: 'Perfekter Qualität auf Knopfdruck.',
+          href: '/mashcineCategory/padmashine',
+          
         },
+        
         {
-          label: 'Wasserspender Stilvoll ', 
+          label: 'Table Top',
+          subLabel: 'Standautomaten ideal für Büros, Praxen und Werkstätten. Modern & praktisch.',
+          href: '/mashcineCategory/tabletop',
+        },
+        
+        {
+          label: 'Wasserspender', 
           subLabel: 'Italienischen Espresso, leckeren Cappuccino',
           href: '/mashcineCategory/wasser',
         },
-        {
-          label: 'Wasserspender spaqa Auftischgeräte & Tower ', 
-          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
-          href: '/mashcineCategory/wasserspender',
-        },
-        {
-          label: 'Saftpressen und Entsafter ', 
-          subLabel: 'Italienischen Espresso, leckeren Cappuccino',
-          href: '/mashcineCategory/saft',
-        },
+        
+        
         {
           label: 'Zubehör ', 
           subLabel: 'Italienischen Espresso, leckeren Cappuccino',

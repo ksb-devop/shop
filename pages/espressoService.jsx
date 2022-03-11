@@ -95,17 +95,16 @@ Espresso-Service || Kaffee-Service Berlin Peter Ganss GmbH</title>
     </Center>
 
     <Box 
-        width={{ base: '90%', md: '90%', lg: '90%' }}
+        width={{ base: '90%', md: '100%', lg: '100%' }}
         my={'90px'}
-        px={{ base: 10, md: 0, lg: 20 }}
+        px={{ base: 10, md: 20, lg: 40 }}
         pb={{ base: 10, md: 10, lg: 20 }}
         borderRadius={10}  > 
       
         
 
-        <Center  >
-          <Grid
-          ml={36}
+        <Center   >
+          <Grid  
           templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }} gap={14} w={'100%'} 
           >
       
@@ -178,7 +177,7 @@ Espresso-Service || Kaffee-Service Berlin Peter Ganss GmbH</title>
          
         borderRadius={10}
         onClick={async () => { 
-          router.push('/mashcineCategory/padmashine');
+          router.push('/mashcineCategory/rex');
 
           }}
         >
@@ -206,7 +205,7 @@ Espresso-Service || Kaffee-Service Berlin Peter Ganss GmbH</title>
          
         borderRadius={10}
         onClick={async () => { 
-          router.push(`/`);
+          router.push('/mashcineCategory/tabletop');
 
           }}
         >

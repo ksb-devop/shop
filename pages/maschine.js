@@ -9,7 +9,7 @@ import SideCategories from '../componenets/SideCategories'
 import { getMascinenCategories } from '../services'
 import { useRouter } from 'next/router'
 
-function Maschine({categories}) {
+function Maschine() {
 
     const router = useRouter(); 
   return (
@@ -42,14 +42,13 @@ function Maschine({categories}) {
           <Grid
           templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }} gap={14} w={'100%'} 
           >
-        {categories.map((categories, index) => (
+         
        
              
 
-       <Box
-       key={categories.node.slug}
+       <Box 
        boxShadow={'dark-lg'}
-        backgroundImage={categories.node.image.url}
+        backgroundImage={'/jura/jm5.jpg'}
         backgroundSize='cover'
         as='button'
         h={{ base: 140, md: 250, lg: 280 }}
@@ -57,7 +56,7 @@ function Maschine({categories}) {
          
         borderRadius={10}
         onClick={async () => { 
-          router.push(`/mashcineCategory/${categories.node.slug}`);
+          router.push('/mashcineCategory/jura');
 
           }}
         >
@@ -71,11 +70,151 @@ function Maschine({categories}) {
         fontWeight={'semibold'}
         my={2}
         borderRadius={5}
-        >{categories.node.name}</Text>
+        >Jura Kaffeevollautomaten</Text>
+          
+        </Box>
+
+        <Box 
+       boxShadow={'dark-lg'}
+        backgroundImage={'/rex/km2.jpg'}
+        backgroundSize='cover'
+        as='button'
+        h={{ base: 140, md: 250, lg: 280 }}
+        w={{ base: '100%', md: '100%', lg: '100%' }}
+         
+        borderRadius={10}
+        onClick={async () => { 
+          router.push('/mashcineCategory/rex');
+
+          }}
+        >
+         
+         
+        <Text
+        textAlign={'center'}
+        backgroundColor={'white'}
+        opacity={'0.9'}
+        fontSize={{ base: '2xl', md: '3xl', lg: '5xl' }}
+        fontWeight={'semibold'}
+        my={2}
+        borderRadius={5}
+        >Rex Royal Kaffeevollautomaten</Text>
+          
+        </Box>
+
+        <Box 
+       boxShadow={'dark-lg'}
+        backgroundImage={'/tabletop/tt.jpg'}
+        backgroundSize='cover'
+        as='button'
+        h={{ base: 140, md: 250, lg: 280 }}
+        w={{ base: '100%', md: '100%', lg: '100%' }}
+         
+        borderRadius={10}
+        onClick={async () => { 
+          router.push('/mashcineCategory/tabletop');
+
+          }}
+        >
+         
+         
+        <Text
+        textAlign={'center'}
+        backgroundColor={'white'}
+        opacity={'0.9'}
+        fontSize={{ base: '2xl', md: '3xl', lg: '5xl' }}
+        fontWeight={'semibold'}
+        my={2}
+        borderRadius={5}
+        >Table Tops</Text>
+          
+        </Box>
+
+        <Box 
+       boxShadow={'dark-lg'}
+        backgroundImage={'/wasser/wm.jpg'}
+        backgroundSize='cover'
+        as='button'
+        h={{ base: 140, md: 250, lg: 280 }}
+        w={{ base: '100%', md: '100%', lg: '100%' }}
+         
+        borderRadius={10}
+        onClick={async () => { 
+          router.push('/mashcineCategory/tabletops');
+
+          }}
+        >
+         
+         
+        <Text
+        textAlign={'center'}
+        backgroundColor={'white'}
+        opacity={'0.9'}
+        fontSize={{ base: '2xl', md: '3xl', lg: '5xl' }}
+        fontWeight={'semibold'}
+        my={2}
+        borderRadius={5}
+        >Wasserspender</Text>
+          
+        </Box>
+
+        <Box 
+       boxShadow={'dark-lg'}
+        backgroundImage={'/espressoService/em.jpg'}
+        backgroundSize='cover'
+        as='button'
+        h={{ base: 140, md: 250, lg: 280 }}
+        w={{ base: '100%', md: '100%', lg: '100%' }}
+         
+        borderRadius={10}
+        onClick={async () => { 
+          router.push('/mashcineCategory/padmashine');
+
+          }}
+        >
+         
+         
+        <Text
+        textAlign={'center'}
+        backgroundColor={'white'}
+        opacity={'0.9'}
+        fontSize={{ base: '2xl', md: '3xl', lg: '5xl' }}
+        fontWeight={'semibold'}
+        my={2}
+        borderRadius={5}
+        >Espresso-Pad-Maschine</Text>
+          
+        </Box>
+
+        <Box 
+       boxShadow={'dark-lg'}
+        backgroundImage={'/jura/jm4.jpg'}
+        backgroundSize='cover'
+        as='button'
+        h={{ base: 140, md: 250, lg: 280 }}
+        w={{ base: '100%', md: '100%', lg: '100%' }}
+         
+        borderRadius={10}
+        onClick={async () => { 
+          router.push('/mashcineCategory/padmashine');
+
+          }}
+        >
+         
+         
+        <Text
+        textAlign={'center'}
+        backgroundColor={'white'}
+        opacity={'0.9'}
+        fontSize={{ base: '2xl', md: '3xl', lg: '5xl' }}
+        fontWeight={'semibold'}
+        my={2}
+        borderRadius={5}
+        >Zubehör</Text>
           
         </Box>
          
-            ))}
+            
         </Grid>
         </Center>
     
