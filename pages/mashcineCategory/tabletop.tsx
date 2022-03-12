@@ -15,6 +15,7 @@ import {
     BreadcrumbLink,
   } from '@chakra-ui/react';
   import { useRouter } from 'next/router'
+  import Angebot from '../../componenets/Angebot';
 
 const TableTop = ({ index, name, url , imageUrl }: TableTop) => {
 
@@ -110,6 +111,8 @@ const TableTop = ({ index, name, url , imageUrl }: TableTop) => {
   
 </Grid> 
     </Center>
+
+    <Angebot/>
 
     </div>
   )

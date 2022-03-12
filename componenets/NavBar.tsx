@@ -320,7 +320,7 @@ import {
         {
           label: 'Espresso-Pads-Maschine',
           subLabel: 'Perfekter Qualität auf Knopfdruck.',
-          href: '/mashcineCategory/padmashine',
+          href: '/mashcineCategory/padmaschine',
           
         },
         

@@ -7,14 +7,20 @@ import {
     Heading,
     Text,
     Stack,
+    Icon,
+    Container,
     Image,
+    Flex,
     Button,
     Grid,
+    useBreakpointValue,
+    createIcon,
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
   } from '@chakra-ui/react';
   import { useRouter } from 'next/router'
+  import Angebot from '../../componenets/Angebot';
 
 const Jura = ({ index, name, url , imageUrl }: Jura) => {
 
@@ -111,9 +117,65 @@ const Jura = ({ index, name, url , imageUrl }: Jura) => {
 </Grid> 
     </Center>
 
+
+    <Angebot/>
+
+
+      <Center>
+        <Stack
+        my={{ base: 10, md: 20, lg: 20 }}
+        mx={{ base: 10, md: 20, lg: 20 }}
+        h={'70vh'} direction={{ base: 'column', md: 'row' }}>
+      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+        <Stack spacing={6} w={'full'} maxW={'lg'}>
+          <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+            <Text
+              as={'span'}
+              position={'relative'}
+              _after={{
+                content: "''",
+                width: 'full',
+                // eslint-disable-next-line react-hooks/rules-of-hooks
+                height: useBreakpointValue({ base: '20%', md: '30%' }),
+                position: 'absolute',
+                bottom: 1,
+                left: 0,
+                bg: 'green.400',
+                zIndex: -1,
+              }}>
+              Kaffee-Service Berlin Peter Ganss GmbH
+            </Text>
+            <br />{' '}
+            <Text color={'green.400'} as={'span'}>
+            ist Ihr zertifizierter Jura-Partner für Berlin
+            </Text>{' '}
+          </Heading>
+          <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
+          Bei uns sind Sie in guten Händen in allen Themen rund um Jura Professional Kaffeevollautomaten. Mit Rat und Tat stehen wir Ihnen zur
+           Seite von der Kaufberatung über Einweisung bis hin zur Wartung und Pflege für Ihre optimale Kaffeeversorgung. Unsere Techniker besuchen
+            regelmäßigen Schulungen bei Jura und unsere Werkstatt erzielt regelmäßig die Bestnote für ausgezeichneten Service und Qualität.
+          </Text>
+           
+        </Stack>
+      </Flex>
+      <Flex flex={1}>
+        <Image
+          alt={'Login Image'}
+          objectFit={'cover'}
+          src={ '/jura/jura.jpg'}
+        />
+      </Flex>
+    </Stack>
+    
+    </Center>
+
     </div>
   )
 }
+
+
+
+
 
 interface Jura {
     index?: string;

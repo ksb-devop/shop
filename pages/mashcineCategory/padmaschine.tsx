@@ -15,6 +15,7 @@ import {
     BreadcrumbLink,
   } from '@chakra-ui/react';
   import { useRouter } from 'next/router'
+  import Angebot from '../../componenets/Angebot';
 
 const PadMaschine = ({ index, name, url , imageUrl }: PadMaschine) => {
 
@@ -110,6 +111,8 @@ const PadMaschine = ({ index, name, url , imageUrl }: PadMaschine) => {
   
 </Grid> 
     </Center>
+
+    <Angebot/>
 
     </div>
   )

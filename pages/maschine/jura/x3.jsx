@@ -33,8 +33,9 @@ import {
   import Head from 'next/head'; 
 
   import {
-    MdCheckCircle,
+    
     CloseIcon,
+    StarIcon,
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
@@ -192,11 +193,11 @@ const x3 = () => {
   </BreadcrumbItem>
 
   <BreadcrumbItem >
-    <BreadcrumbLink href='/mashcineCategory/vollautomaten'>Jura Kaffeevollautomaten</BreadcrumbLink>
+    <BreadcrumbLink href='/mashcineCategory/jura'>Jura Kaffeevollautomaten</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href='maschine/jurax3c'>Giga X3 </BreadcrumbLink>
+    <BreadcrumbLink href='#'>Giga X3 </BreadcrumbLink>
   </BreadcrumbItem>
 </Breadcrumb>
 
@@ -321,33 +322,33 @@ passt sie sich perfekt in Ihre Küche ein.
        <Box py={12} >
        <List spacing={3}>
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={StarIcon} color='green.500' />
     Kaffeegenuss auf höchstem Niveau: Ristretto, Espresso, Café Crème, Cappuccino, Latte macchiato… bis zu 32 individuell programmierbare Spezialitäten
   </ListItem>
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={StarIcon} color='green.500' />
     Sehr schnelle Zubereitung: z.B. 2 Latte macciato in nur 86 sek.
   </ListItem>
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={StarIcon} color='green.500' />
     Hohe Kapazität: Festwasseranschluss und
 2 x 650g Bohnenbehälter minimaler Aufwand beim Befülle
   </ListItem>
   {/* You can also use custom icons from react-icons */}
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={StarIcon} color='green.500' />
     200 Tassen pro Tag (365 Tage im Jahr)
   </ListItem>
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={StarIcon} color='green.500' />
     Bereiten Sie gleichzeitig 1-2 Tassen oder ein Kännchen (360ml) zu
   </ListItem>
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={StarIcon} color='green.500' />
     Einfach bedienbar: Intuitiv bedienbarer und programmierbarer Touchscreen und akustische Rückmeldung
   </ListItem>
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={StarIcon} color='green.500' />
     Professionelle Kaffeezubereitung: zwei elektrisch verstellbare Profi-Keramikmahlwerke für schnelle, präzise, homogene, konstant gleichmäßige Mahlung, sowie zwei Heizsysteme, zwei Pumpen und zwei Fluidsysteme und variable Brühkammer mit 5 bis 16g
   </ListItem>
 </List>
