@@ -134,6 +134,7 @@ import {
   const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
     return (
       <Link
+        position={'sticky'}
         href={href}
         role={'group'}
         display={'block'}

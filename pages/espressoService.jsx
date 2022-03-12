@@ -121,7 +121,7 @@ Espresso-Service || Kaffee-Service Berlin Peter Ganss GmbH</title>
          
         borderRadius={10}
         onClick={async () => { 
-          router.push('/mashcineCategory/padmashine');
+          router.push('/mashcineCategory/padmaschine');
 
           }}
         >

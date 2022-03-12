@@ -20,14 +20,7 @@ const SideCategories = () =>  {
       setCategories(newCategories);
     });
   }, []);
-
-  const [maschineCategories, setMaschineCategories] = useState([]);
-
-  useEffect(() => {
-    getMascinenCategories().then((newMaschineCategories) => {
-      setMaschineCategories(newMaschineCategories);
-    });
-  }, []);
+ 
 
 
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -75,16 +68,16 @@ const SideCategories = () =>  {
           </DrawerBody>
 
           <DrawerBody>
-          {maschineCategories.map((maschineCategories, index) => (
+          {maschineCategories.map((maschineCategories) => (
         
-        <Link  href={`/mashcineCategory/${maschineCategories.node.slug}`} key={maschineCategories.node.slug} > 
+        <Link  href={maschineCategories.href} key={maschineCategories.index} > 
         
         <Text
         textAlign={'center'}
         backgroundColor={'green.400'}
         my={2}
         borderRadius={5}
-        >{maschineCategories.node.name}</Text>
+        >{maschineCategories.label}</Text>
         </Link>   
         
       ))}
@@ -101,5 +94,51 @@ const SideCategories = () =>  {
     </>
   )
 }
+
+interface NavItem {
+  label: string;
+  index?: string;
+  children?: Array<NavItem>;
+  href?: string;
+}
+
+const maschineCategories: Array<NavItem> = [
+ 
+   
+       
+      {
+        index: '2',
+        label: 'Jura Kaffeevollautomaten ',  
+        href: '/mashcineCategory/jura',
+      },
+      {
+        index: '3',
+        label: 'Rex Royal Kaffeevollautomaten ',  
+        href: '/mashcineCategory/rex',
+      },
+      {
+        index: '4',
+        label: 'Espresso-Pads-Maschine', 
+        href: '/mashcineCategory/padmashine',
+        
+      },
+      
+      { index: '5',
+        label: 'Table Top', 
+        href: '/mashcineCategory/tabletop',
+      },
+      
+      { index: '6',
+        label: 'Wasserspender',  
+        href: '/mashcineCategory/wasser',
+      },
+      
+      
+      { index: '7',
+        label: 'Zubehör ',  
+        href: '/mashcineCategory/zubehor',
+      },
+   
+];
 
 export default SideCategories

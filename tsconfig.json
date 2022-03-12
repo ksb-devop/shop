@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/maschine/jura/x3.jsx"  ],
   "exclude": [
     "node_modules"
   ]

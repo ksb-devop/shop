@@ -5,7 +5,7 @@ import Hero from '../componenets/Hero'
 import NavBar from '../componenets/NavBar.tsx'
 import { Heading, Text, Box, Image,Link, Center, Grid  } from '@chakra-ui/react'
 import Categories from '../componenets/Categories'
-import SideCategories from '../componenets/SideCategories'
+import SideCategories from '../componenets/SideCategories.tsx'
 import { getMascinenCategories } from '../services'
 import { useRouter } from 'next/router'
 
@@ -140,7 +140,7 @@ function Maschine() {
          
         borderRadius={10}
         onClick={async () => { 
-          router.push('/mashcineCategory/tabletops');
+          router.push('/mashcineCategory/wasser');
 
           }}
         >
@@ -168,7 +168,7 @@ function Maschine() {
          
         borderRadius={10}
         onClick={async () => { 
-          router.push('/mashcineCategory/padmashine');
+          router.push('/mashcineCategory/padmaschine');
 
           }}
         >
@@ -196,7 +196,7 @@ function Maschine() {
          
         borderRadius={10}
         onClick={async () => { 
-          router.push('/mashcineCategory/padmashine');
+          router.push('/mashcineCategory/zubehor');
 
           }}
         >
