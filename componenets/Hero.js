@@ -40,32 +40,27 @@ export default function CaptionCarousel() {
   // This can be static or loaded from a server
   const cards = [
     {
-      title: 'Kaffee Pads- Ersatz Werbung',
+      title: ' ',
       text:
-        "Hochwertiger italienischer Spitzenkaffee in Espresso-Pads",
+        " ",
       image:
-        '/a.jpg',
+        '/hero/jura.png',
     },
     {
-      title: 'Kaffeebohnen Ersatz Werbung',
+      title: ' ',
       text:
-        "Frisch für Sie geröstete Kaffeebohnen von unserem Röster Marcafé aus Italien ",
+        "  ",
       image:
-      '/b.jpg',
+      '/hero/jura.png',
+    },
+    { 
+      image:
+      '/hero/tabletop.jpg',
     },
     {
-      title: 'Kaffeevollautomaten Ersatz Werbung',
-      text:
-        "Nach langjähriger Erfahrung in der Kaffeeversorgung am Arbeitsplatz, haben wir für jedes Büro die passende Lösung.",
+       
       image:
-      '/e.jpg',
-    },
-    {
-      title: 'Facebook Instagram Ersatz Werbung',
-      text:
-        "Nach langjähriger Erfahrung in der Kaffeeversorgung am Arbeitsplatz, haben wir für jedes Büro die passende Lösung.",
-      image:
-      '/i.jpg',
+      '/hero/kp.png',
     },
   ];
 
@@ -73,8 +68,8 @@ export default function CaptionCarousel() {
     <Box
       position={'relative'}
       mt={5}
-      height={'500px'}
-      width={{ base: '100%', md: '80%', lg: '80%' }}
+      height={'550px'}
+      width={{ base: '100%', md: '80%', lg: '100%' }}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
       <link
@@ -94,7 +89,7 @@ export default function CaptionCarousel() {
         variant="ghost"
         position="absolute"
         left={30}
-        top={250}
+        top={280}
         transform={'translate(0%, -50%)'}
         zIndex={2}
         onClick={() => slider?.slickPrev()}>
@@ -106,7 +101,7 @@ export default function CaptionCarousel() {
         variant="ghost"
         position="absolute"
         right={30}
-        top={250}
+        top={280}
         transform={'translate(0%, -50%)'}
         zIndex={2}
         onClick={() => slider?.slickNext()}>
@@ -116,35 +111,15 @@ export default function CaptionCarousel() {
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((card, index) => (
           <Box
-            key={index}
-            height={700}
+            key={index} 
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
-            backgroundSize='cover'
+            backgroundSize='contain'
             backgroundImage={`url(${card.image})`}>
             {/* This is the block for the caption */}
             <Container size="container.lg" height="600px" position="relative">
-              <Stack
-                backgroundColor={'gray.300'}
-                spacing={6}
-                width={{ base: '100%', md: '100%', lg: '100%' }}
-                opacity={0.9}
-                position="fixed"
-                bottom={40}
-                left={0} 
-                p={5}
-                borderRadius={5}
-                transform="translate(0, -50%)">
-                <Heading 
-                
-                fontSize={{ base: 'lg', md: '4xl', lg: '5xl' }}>
-                  {card.title}
-                </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
-                  {card.text}
-                </Text>
-              </Stack>
+               
             </Container>
           </Box>
         ))}

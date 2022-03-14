@@ -13,6 +13,7 @@ import {
     IconButton, 
     Container, 
     chakra,     
+    Divider,
     VStack,  
     SimpleGrid,
     StackDivider,
@@ -31,6 +32,7 @@ import {
   } from '@chakra-ui/react';
   import { useRouter } from 'next/router';
   import Head from 'next/head'; 
+  import { saveAs } from "file-saver";
 
   import {
     
@@ -172,6 +174,48 @@ const x3 = () => {
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
+  const saveFile = () => {
+    saveAs(
+      "/jura/x3/pdf/Jura_GIGA_X3_Anleitung.pdf",
+      "Jura_GIGA_X3_Anleitung.pdf"
+    );
+  };
+  const saveFile1 = () => {
+    saveAs(
+      "/jura/x3/pdf/Jura_GIGA_X3_Entkalken.pdf",
+      "Jura_GIGA_X3_Entkalken.pdf"
+    );
+  };
+  const saveFile2 = () => {
+    saveAs(
+      "/jura/x3/pdf/Jura_GIGA_X3_Filter_wechseln.pdf",
+      "Jura_GIGA_X3_Filter_wechseln.pdf"
+    );
+  };
+  const saveFile3 = () => {
+    saveAs(
+      "/jura/x3/pdf/Jura_GIGA_X3_Geraet_Reinigen.pdf",
+      "Jura_GIGA_X3_Geraet_Reinigen.pdf"
+    );
+  };
+  const saveFile4 = () => {
+    saveAs(
+      "/jura/x3/pdf/Jura_GIGA_X3_Milchsystem_reinigen.pdf",
+      "Jura_GIGA_X3_Milchsystem_reinigen.pdf"
+    );
+  };
+  const saveFile5 = () => {
+    saveAs(
+      "/jura/x3/pdf/Jura_GIGA_X3_Produktblatt.pdf",
+      "Jura_GIGA_X3_Produktblatt.pdf"
+    );
+  };
+  const saveFile6 = () => {
+    saveAs(
+      "/jura/x3/pdf/Jura_GIGA_X3_Technische_Dokumentation.pdf",
+      "Jura_GIGA_X3_Technische_Dokumentation.pdf"
+    );
+  };
   
   return (
     <div> 
@@ -255,11 +299,10 @@ const x3 = () => {
                 color={useColorModeValue('gray.500', 'gray.400')}
                 fontSize={'2xl'}
                 fontWeight={'300'}>
-                Wo Schwarzkaffeespezialitäten favorisiert, professionell Kännchenkaffee zubereitet 
-                und heißes Wasser in zwei verschiedenen Temperaturstufen für Tee zur Verfügung gestellt 
-                werden soll, spielt die Jura X6 ihre Stärken voll aus. Ihr klar verständliches Bedienkonzept 
-                überzeugt besonders dort, wo sie von Personal oder von Gästen selbst bedient wird. Auch 
-                die einfach zu bedienen Selbstreinigung kann voll überzeugen und hält nicht den Alltagsbetrieb auf.
+                Mit der GIGA X3 beweist JURA eindrücklich Schweizer Innovationskraft und Professionalität bis ins kleinste Detail. Überall,
+       wo Kapazitäten bis zu 150 Tassen an der Tagesordnung sind, überzeugt sie mit Qualität, Funktionalität und Zuverlässigkeit.
+        Gepaart mit Höchstleistung in allen Belangen resultiert ein Hightech-Vollautomat, der ideal auf die Anforderungen von Großbüros, 
+        dem Frühstücks-, Seminar- und Tagungsbereich sowie Selbstbedienungszonen zugeschnitten ist.
               </Text>
                
             </VStack>
@@ -275,11 +318,13 @@ const x3 = () => {
   <TabList   mb='1em'>
     <Tab>Vorzüge</Tab>
     <Tab>Technische Übersicht</Tab>
-    <Tab>Service</Tab> 
+    <Tab>Unseren Service</Tab> 
+    <Tab>Zubehör</Tab> 
+    <Tab>Dokumente</Tab> 
   </TabList>
   <TabPanels>
     <TabPanel>
-      <Grid gridTemplateColumns={'repeat(2, 1fr)'} py={5} >
+      <Grid gridTemplateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }} gap={14} w={'100%'}  >
       <Image
             p={6}
             w={'800px'}
@@ -288,25 +333,19 @@ const x3 = () => {
             src={'/jura/x3/4.jpg'}
           />
       <Text fontSize={20} p={30} textAlign={'center'} mt={'80px'} 
-      >Ihr Einstieg in die Oberklasse
-Die GIGA X8cGeneration2 ist eine Neuentwicklung auf Basis der langjährigen 
-Erfahrung aus dem Hause Jura für die professionelle Kaffeeversorgung. Die 
-einzigartiger Speed-Funktion bietet perfekten Kaffeegenuss in Rekordzeit - 
-ideal bei maximaler Auslastung. Sehr belastbar für einen täglichen Bezug von 
-täglich 200 Tassen höchsten Kaffeegenuss. Mit den 2 Farbvarianten Chrom und Schwarz 
-passt sie sich perfekt in Ihre Küche ein.
+      >Die GIGA X3 hat’s in sich: Das Hochleistungs-Keramikscheibenmahlwerk liefert zuverlässig über Jahre 
+      eine präzise, konstant gleichmäßige Mahlung. Dafür sorgt eine Top-Innovation: A.G.A. (Automatic Grinder Adjustment) – 
+      die elektronisch gesteuerte, automatische Nachjustierung. Der Puls-Extraktionsprozess (P.E.P.®) optimiert die Extraktionszeit
+       für kurze Spezialitäten und CLARIS Pro Smart in Kombination mit dem Intelligent Water System (I.W.S.)
+        liefert perfekte Wasserqualität für puren Geschmack.
    </Text>
 
    
 
    <Text fontSize={20} p={30}  textAlign={'center'} mt={'80px'} 
-      >Ihr Einstieg in die Oberklasse
-Die GIGA X8cGeneration2 ist eine Neuentwicklung auf Basis der langjährigen 
-Erfahrung aus dem Hause Jura für die professionelle Kaffeeversorgung. Die 
-einzigartiger Speed-Funktion bietet perfekten Kaffeegenuss in Rekordzeit - 
-ideal bei maximaler Auslastung. Sehr belastbar für einen täglichen Bezug von 
-täglich 200 Tassen höchsten Kaffeegenuss. Mit den 2 Farbvarianten Chrom und Schwarz 
-passt sie sich perfekt in Ihre Küche ein.
+      >Als einzelner Vollautomat genauso, wie mit passenden Peripheriegeräten wie Tassenwärmer, Abrechnungssystem, etc. erweitert, 
+      auf Basis der GIGA X3 lässt sich für jedes Einsatzgebiet die ideale Kaffee-Komplettlösung konfigurieren. Bei Bedarf wächst
+       sie auch bequem mit steigenden Anforderungen mit.
    </Text>
    <Image
             p={6}
@@ -318,43 +357,161 @@ passt sie sich perfekt in Ihre Küche ein.
 
     </Grid>
     </TabPanel>
+
     <TabPanel>
        <Box py={12} >
-       <List spacing={3}>
+       <List   
+       fontSize={'lg'} spacing={4}>
   <ListItem>
     <ListIcon as={StarIcon} color='green.500' />
-    Kaffeegenuss auf höchstem Niveau: Ristretto, Espresso, Café Crème, Cappuccino, Latte macchiato… bis zu 32 individuell programmierbare Spezialitäten
+    Bis zu 32 individuell   programmierbare Spezialitäten
   </ListItem>
   <ListItem>
     <ListIcon as={StarIcon} color='green.500' />
-    Sehr schnelle Zubereitung: z.B. 2 Latte macciato in nur 86 sek.
+    Hohe Kapazität: 1 kg Bohnenbehälter minimaler Aufwand beim Befüllen
+5 Liter Wassertank Gerät immer flexibel und mobil einsetzbar.
   </ListItem>
   <ListItem>
     <ListIcon as={StarIcon} color='green.500' />
-    Hohe Kapazität: Festwasseranschluss und
-2 x 650g Bohnenbehälter minimaler Aufwand beim Befülle
-  </ListItem>
-  {/* You can also use custom icons from react-icons */}
+    150 Tassen pro Tag (365 Tage im Jahr)
+  </ListItem> 
   <ListItem>
     <ListIcon as={StarIcon} color='green.500' />
-    200 Tassen pro Tag (365 Tage im Jahr)
+    Bereiten Sie gleichzeitig 1-2 Tassen oder ein Kännchen (360ml) dank der Bypass-Funktion in High-Speed zu
   </ListItem>
   <ListItem>
     <ListIcon as={StarIcon} color='green.500' />
-    Bereiten Sie gleichzeitig 1-2 Tassen oder ein Kännchen (360ml) zu
+    Einfach bedienbar: Individuell programmierbares Touch-Farbbildschirm
   </ListItem>
   <ListItem>
     <ListIcon as={StarIcon} color='green.500' />
-    Einfach bedienbar: Intuitiv bedienbarer und programmierbarer Touchscreen und akustische Rückmeldung
+    Professionelle Kaffeezubereitung: Keramik-Mahlwerk für schnelle, präzise, homogene, konstant gleichmäßige Mahlung, <br/> sowie zwei Heizsysteme, zwei Pumpen und zwei Fluidsysteme
   </ListItem>
   <ListItem>
     <ListIcon as={StarIcon} color='green.500' />
-    Professionelle Kaffeezubereitung: zwei elektrisch verstellbare Profi-Keramikmahlwerke für schnelle, präzise, homogene, konstant gleichmäßige Mahlung, sowie zwei Heizsysteme, zwei Pumpen und zwei Fluidsysteme und variable Brühkammer mit 5 bis 16g
+    Verbesserte Reinigungsprogramme garantiert einen geringen Pflegeaufwand
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    496x320x550mm (LxBxH), 19kg, 220-240V, 2300W
   </ListItem>
 </List>
        </Box>
     </TabPanel>
+
+    <TabPanel>
+    <Box py={12} >
+    <List 
+    fontSize={'lg'}
+    spacing={3}>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Wir helfen Ihnen bei der richtigen Kaffeewahl für Ihren Einsatz: ob Filterkaffee, Espresso-Pads oder ganze Bohnen im Vollautomat.
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Kaufen, mieten oder leasen? Ihren neuen Kaffeevollautomat können sie ganz einfach bei uns finanzieren.
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Sie wollen so wenig Aufwand wie möglich? Unsere Techniker installieren Ihnen einen Festwasseranschluss, Kaffeesatzabwurf und Restwasserablaufset.
+  </ListItem> 
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Wir rufen Sie in regelmäßigen Abständen an und sorgen dafür, dass Sie Ihre Kaffeebestellung nicht versäumen können.
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Ihre Kaffeelieferung bringt Ihnen unser Kundenbetreuer bis in Ihre Küche.
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Um die Installation, Programmierung, sowie regelmäßige Wartung, Überprüfung und Entkalkung der Geräte brauchen Sie sich nicht zu kümmern – das übernehmen wir gern für Sie.
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Unsere Techniker besuchen regelmäßig Schulungen um immer auf dem aktuellsten Stand zu sein.
+  </ListItem>
+</List>
+       </Box>
+    </TabPanel>
+
+    <TabPanel>
+    <Box py={12} >
+    <List 
+    fontSize={'lg'}
+    spacing={3}>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Mit Festwasseranschluss erhältlich
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Kaffeesatz Abwurf-Set
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Restwasserablauf-Set
+  </ListItem> 
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Milchkühler
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Ihre Kaffeelieferung bringt Ihnen unser Kundenbetreuer bis in Ihre Küche.
+  </ListItem>
+  <ListItem>
+    <ListIcon as={StarIcon} color='green.500' />
+    Abrechnungssysteme
+  </ListItem>
+  
+</List>
+       </Box> 
+     
+   </TabPanel>
+
+   <TabPanel  >
+     <Stack flexDirection={'row'} alignItems={'center'}  >
+     <Text fontSize={'2xl'} px={10} >Jura GIGA X3 Anleitung PDF</Text>
+    <Button float={'right'} onClick={saveFile} >Download </Button>
+   </Stack> 
+   <Divider orientation='horizontal' p={2} />
+    <Stack flexDirection={'row'} alignItems={'center'}  >
+     <Text fontSize={'2xl'} px={10} >Jura GIGA X3 Entkalken PDF</Text>
+    <Button onClick={saveFile1} >Download </Button> 
+    </Stack> 
+    <Divider orientation='horizontal'  p={2} />
+    <Stack flexDirection={'row'} alignItems={'center'}  >
+     <Text fontSize={'2xl'} px={10} >Jura GIGA X3 Filter-wechseln PDF</Text>
+    <Button onClick={saveFile2} >Download </Button>
+    </Stack> 
+    <Divider orientation='horizontal'  p={2} />
+    <Stack flexDirection={'row'} alignItems={'center'}  >
+     <Text fontSize={'2xl'} px={10} >Jura GIGA X3 Geraet-Reinigen PDF</Text>
+    <Button onClick={saveFile3} >Download </Button>
+    </Stack> 
+    <Divider orientation='horizontal'  p={2} />
+    <Stack flexDirection={'row'} alignItems={'center'}  >
+     <Text fontSize={'2xl'} px={10} >Jura GIGA X3 Milchsystem-reinigen PDF</Text>
+    <Button onClick={saveFile4} >Download </Button>
+    </Stack> 
+    <Divider orientation='horizontal'  p={2} />
+    <Stack flexDirection={'row'} alignItems={'center'}  >
+     <Text fontSize={'2xl'} px={10} >Jura GIGA X3 Produktblatt PDF</Text>
+    <Button onClick={saveFile5} >Download </Button>
+    </Stack> 
+    <Divider orientation='horizontal'  p={2} />
+    <Stack flexDirection={'row'} alignItems={'center'}  >
+     <Text fontSize={'2xl'} px={10} >Jura GIGA X3 Technische-Dokumentation PDF</Text>
+    <Button onClick={saveFile6} >Download </Button>
+    </Stack> 
+    <Divider orientation='horizontal'  p={2}  />
+     
+   </TabPanel>
   </TabPanels>
+
+  
 </Tabs>
 </Box>
 
