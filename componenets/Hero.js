@@ -51,16 +51,16 @@ export default function CaptionCarousel() {
       text:
         "  ",
       image:
-      '/hero/jura.png',
+      '/hero/rex.png',
     },
     { 
       image:
-      '/hero/tabletop.jpg',
+      '/hero/tt.png',
     },
     {
        
       image:
-      '/hero/kp.png',
+      '/hero/mp.png',
     },
   ];
 

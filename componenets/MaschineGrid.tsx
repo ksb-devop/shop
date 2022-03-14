@@ -46,12 +46,14 @@ import {
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
 
         <Flex>
-            <Image
-              rounded={'md'}
-              alt={'feature image'}
-              src={'/e.jpg'}
-              objectFit={'cover'}
-            />
+        <video 
+      src="/hero/v.mp4"   
+      autoPlay
+      muted={true}  
+      loop={true}
+      id="myVideo" >
+      
+      </video>
           </Flex>
           <Stack spacing={4}>
             <Text
