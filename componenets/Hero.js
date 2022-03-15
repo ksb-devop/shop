@@ -55,7 +55,7 @@ export default function CaptionCarousel() {
     },
     { 
       image:
-      '/hero/tt.png',
+      '/hero/ttb.jpg',
     },
     {
        
