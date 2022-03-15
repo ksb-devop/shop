@@ -106,7 +106,7 @@ const Jura = ({ index, name, url , imageUrl }: Jura) => {
             router.push(jura.url);
   
             }}
-          colorScheme='blue'>Mehr Info </Button>
+          colorScheme='green'>Mehr Info </Button>
         </Stack>
       </Box>
 

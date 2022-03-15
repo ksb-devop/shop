@@ -51,6 +51,14 @@ import Slider from 'react-slick';
 
 import Jura from '../../mashcineCategory/jura';
 
+import JuraZubehör from '../../../componenets/jura/Zubehor';
+
+import UberService from '../../../componenets/UberService'
+
+
+
+
+
 // Settings for the slider
 const settings = {
   dots: true,
@@ -401,72 +409,13 @@ const x3 = () => {
 
     <TabPanel>
     <Box py={12} >
-    <List 
-    fontSize={'lg'}
-    spacing={3}>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Wir helfen Ihnen bei der richtigen Kaffeewahl für Ihren Einsatz: ob Filterkaffee, Espresso-Pads oder ganze Bohnen im Vollautomat.
-  </ListItem>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Kaufen, mieten oder leasen? Ihren neuen Kaffeevollautomat können sie ganz einfach bei uns finanzieren.
-  </ListItem>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Sie wollen so wenig Aufwand wie möglich? Unsere Techniker installieren Ihnen einen Festwasseranschluss, Kaffeesatzabwurf und Restwasserablaufset.
-  </ListItem> 
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Wir rufen Sie in regelmäßigen Abständen an und sorgen dafür, dass Sie Ihre Kaffeebestellung nicht versäumen können.
-  </ListItem>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Ihre Kaffeelieferung bringt Ihnen unser Kundenbetreuer bis in Ihre Küche.
-  </ListItem>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Um die Installation, Programmierung, sowie regelmäßige Wartung, Überprüfung und Entkalkung der Geräte brauchen Sie sich nicht zu kümmern – das übernehmen wir gern für Sie.
-  </ListItem>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Unsere Techniker besuchen regelmäßig Schulungen um immer auf dem aktuellsten Stand zu sein.
-  </ListItem>
-</List>
+     <UberService/>
        </Box>
     </TabPanel>
 
     <TabPanel>
     <Box py={12} >
-    <List 
-    fontSize={'lg'}
-    spacing={3}>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Mit Festwasseranschluss erhältlich
-  </ListItem>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Kaffeesatz Abwurf-Set
-  </ListItem>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Restwasserablauf-Set
-  </ListItem> 
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Milchkühler
-  </ListItem>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Ihre Kaffeelieferung bringt Ihnen unser Kundenbetreuer bis in Ihre Küche.
-  </ListItem>
-  <ListItem>
-    <ListIcon as={StarIcon} color='green.500' />
-    Abrechnungssysteme
-  </ListItem>
-  
-</List>
+     <JuraZubehör/>
        </Box> 
      
    </TabPanel>
@@ -474,12 +423,17 @@ const x3 = () => {
    <TabPanel  >
      <Stack flexDirection={'row'} alignItems={'center'}  >
      <Text fontSize={'2xl'} px={10} >Jura GIGA X3 Anleitung PDF</Text>
+     <a href='/jura/x3/pdf/Jura_GIGA_X3_Anleitung.pdf' target="_blank"  >
+    <Button mx={2} >Open </Button> 
+    </a>
     <Button float={'right'} onClick={saveFile} >Download </Button>
+    
    </Stack> 
    <Divider orientation='horizontal' p={2} />
     <Stack flexDirection={'row'} alignItems={'center'}  >
      <Text fontSize={'2xl'} px={10} >Jura GIGA X3 Entkalken PDF</Text>
     <Button onClick={saveFile1} >Download </Button> 
+    
     </Stack> 
     <Divider orientation='horizontal'  p={2} />
     <Stack flexDirection={'row'} alignItems={'center'}  >
