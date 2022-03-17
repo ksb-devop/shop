@@ -59,7 +59,7 @@ import UberService from "../../../componenets/UberService";
 
 import X3slider from "../../../componenets/jura/productCarousel/X3slider.jsx";
 
-import X3doc from "../../../componenets/jura/documents/x3doc.jsx"
+import X3doc from "../../../componenets/jura/documents/X3doc.jsx"
 
 const x3 = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
