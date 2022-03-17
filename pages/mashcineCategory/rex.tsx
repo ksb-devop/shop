@@ -104,7 +104,7 @@ const Rex = ({ index, name, url , imageUrl }: Rex) => {
             router.push(rex.url);
   
             }}
-          colorScheme='blue'>Mehr Info </Button>
+          colorScheme='green'>Mehr Info </Button>
         </Stack>
       </Box>
 
@@ -151,7 +151,7 @@ interface Rex {
       index: '1',  
       name: 'S2',  
       brand: 'Rex Royal',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/rex/s2/1.jpg',
        
     },
@@ -159,7 +159,7 @@ interface Rex {
       index: '2',  
       name: 'S300',  
       brand: 'Rex Royal',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/rex/s300/1.jpg',
         
     },
@@ -167,7 +167,7 @@ interface Rex {
       index: '3', 
       name: 'S500',  
       brand: 'Rex Royal',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/rex/s500/1.jpg',
        
     },

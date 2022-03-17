@@ -100,7 +100,7 @@ const wasser = ({ index, name, url , imageUrl }: Wasserspender) => {
             router.push(wasser.url);
   
             }}
-          colorScheme='blue'>Mehr Info </Button>
+          colorScheme='green'>Mehr Info </Button>
         </Stack>
       </Box>
 
@@ -131,7 +131,7 @@ interface Wasserspender {
       index: '1',  
       name: 'VIVREAU Extra 50',  
       brand: 'BRITA',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/wasser/ww.png',
        
     },
@@ -139,7 +139,7 @@ interface Wasserspender {
       index: '2',  
       name: 'VIVREAU ViTap',  
       brand: 'BRITA',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/wasser/w.jpg',
         
     },
@@ -147,15 +147,14 @@ interface Wasserspender {
       index: '3', 
       name: 'spaqa iQ',  
       brand: 'spaqa',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/wasser/w3.png',
        
     },
     {
       index: '4', 
       name: 'rhea COOL',  
-      brand: 'rhea',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/wasser/w2.jpg',
        
     },

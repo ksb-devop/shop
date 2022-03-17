@@ -101,7 +101,7 @@ const TableTop = ({ index, name, url , imageUrl }: TableTop) => {
             router.push(tabletop.url);
   
             }}
-          colorScheme='blue'>Mehr Info </Button>
+          colorScheme='green'>Mehr Info </Button>
         </Stack>
       </Box>
 
@@ -134,7 +134,7 @@ interface TableTop {
       index: '1',  
       name: 'Business Line iC ',  
       brand: 'laRhea',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/tabletop/ic/1.jpg',
        
     },
@@ -142,7 +142,7 @@ interface TableTop {
       index: '2',  
       name: 'Business Line Grande PB',  
       brand: 'laRhea',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/tabletop/gpb/1.jpg',
         
     },
@@ -150,7 +150,7 @@ interface TableTop {
       index: '3', 
       name: 'V+ Grande',  
       brand: 'laRhea',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/tabletop/grande/1.jpg',
        
     },
@@ -158,7 +158,7 @@ interface TableTop {
       index: '4', 
       name: 'V+ Grande Premium',  
       brand: 'laRhea',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/tabletop/vho/1.jpg',
        
     },
@@ -166,7 +166,7 @@ interface TableTop {
         index: '5', 
         name: 'Premium 2VHO',  
         brand: 'laRhea V+ Grande',
-        url: '/',
+        url: '/maschine/jura/x3',
         imageUrl: '/tabletop/2vho/1.jpg',
          
     },
@@ -174,7 +174,7 @@ interface TableTop {
         index: '6', 
         name: 'Caffé europa PB',  
         brand: 'laRhea',
-        url: '/',
+        url: '/maschine/jura/x3',
         imageUrl: '/tabletop/pb/1.jpg',
          
     },  

@@ -100,7 +100,7 @@ const Zubehör = ({ index, name, url , imageUrl }: Zubehör) => {
             router.push(zubehör.url);
   
             }}
-          colorScheme='blue'>Mehr Info </Button>
+          colorScheme='green'>Mehr Info </Button>
         </Stack>
       </Box>
 
@@ -131,7 +131,7 @@ interface Zubehör {
       index: '1',  
       name: 'Milchkühler Piccolo',  
       brand: 'Jura',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/zubehor/z1.jpg',
        
     },
@@ -139,7 +139,7 @@ interface Zubehör {
       index: '2',  
       name: 'Cool Control ',  
       brand: 'Jura',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/zubehor/z2.jpg',
         
     },
@@ -147,7 +147,7 @@ interface Zubehör {
       index: '3', 
       name: 'Milchkühler',  
       brand: 'Jura',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/zubehor/z3.jpg',
        
     },

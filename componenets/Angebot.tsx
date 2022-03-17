@@ -86,10 +86,10 @@ const Angebot = () => {
                 top={'10px'}
               />
               <Text
-                fontSize={'lg'}
+                fontSize={{ base: 'md',  lg: 'lg' }} 
                 fontFamily={'Caveat'}
                 position={'absolute'}
-                right={'-135px'}
+                right={{ base: '-105px',  lg: '-135px' }} 
                 top={'-18px'}
                 transform={'rotate(10deg)'}>
                 kundenspezifische Angebote

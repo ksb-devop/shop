@@ -26,7 +26,7 @@ const TestimonialContent = ({ children }: { children: ReactNode }) => {
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"dark-lg"}
         opacity={0.9}
-        h={350}
+        h={{ base: '100%', md: 350 }}
         w={{ base: "100%", md: "80%", lg: "100%" }}
         p={8}
         rounded={"xl"}

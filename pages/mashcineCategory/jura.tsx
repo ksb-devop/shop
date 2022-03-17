@@ -58,11 +58,15 @@ const Jura = ({ index, name, url , imageUrl }: Jura) => {
        >Jura Kaffeevollautomaten
        </Text>
 
-      <Center py={12}  >
+      <Center 
+      py={12}
+      pr={{ base: -16,  lg: 0 }} 
+      mx={{ base: 16,  lg: 0 }}        
+      >
       <Grid
           
           mb={{ base: 10,  lg: 20 }}
-          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }} gap={14} w={{ base: '90%', md: '80%', lg: '80%' }}
+          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }} gap={14} w={{ base: '100%', md: '80%', lg: '80%' }}
           >
 
 
@@ -125,13 +129,20 @@ const Jura = ({ index, name, url , imageUrl }: Jura) => {
         <Stack
         my={{ base: 10, md: 20, lg: 20 }}
         mx={{ base: 10, md: 20, lg: 20 }}
-        h={'70vh'} direction={{ base: 'column', md: 'row' }}>
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+       direction={{ base: 'column', md: 'row' }}>
+      <Flex 
+       p={{ base: 2,  lg: 8 }}   
+       flex={1} 
+       align={'center'} 
+       justify={'center'}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
-          <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+          <Heading 
+          textAlign={'center'}
+          fontSize={{ base: '2xl', md: '4xl', lg: '5xl' }}>
             <Text
               as={'span'}
               position={'relative'}
+              
               _after={{
                 content: "''",
                 width: 'full',
@@ -150,7 +161,9 @@ const Jura = ({ index, name, url , imageUrl }: Jura) => {
             ist Ihr zertifizierter Jura-Partner für Berlin
             </Text>{' '}
           </Heading>
-          <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
+          <Text 
+          textAlign={'center'}
+          fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
           Bei uns sind Sie in guten Händen in allen Themen rund um Jura Professional Kaffeevollautomaten. Mit Rat und Tat stehen wir Ihnen zur
            Seite von der Kaufberatung über Einweisung bis hin zur Wartung und Pflege für Ihre optimale Kaffeeversorgung. Unsere Techniker besuchen
             regelmäßigen Schulungen bei Jura und unsere Werkstatt erzielt regelmäßig die Bestnote für ausgezeichneten Service und Qualität.
@@ -201,7 +214,7 @@ interface Jura {
       index: '2',  
       name: 'Giga X3c',  
       brand: 'Jura',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/jura/x3c/1.jpg',
         
     },
@@ -209,7 +222,7 @@ interface Jura {
       index: '3', 
       name: 'Giga X8',  
       brand: 'Jura',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/jura/x8/1.jpg',
        
     },
@@ -217,7 +230,7 @@ interface Jura {
       index: '4', 
       name: 'Giga X8c',  
       brand: 'Jura',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/jura/x8c/1.jpg',
        
     },
@@ -225,7 +238,7 @@ interface Jura {
         index: '5', 
         name: 'Giga X6 ',  
         brand: 'Jura',
-        url: '/',
+        url: '/maschine/jura/x3',
         imageUrl: '/jura/x6/1.jpg',
          
       },
@@ -233,7 +246,7 @@ interface Jura {
         index: '6', 
         name: 'Giga X10 ',  
         brand: 'Jura',
-        url: '/',
+        url: '/maschine/jura/x3',
         imageUrl: '/jura/x10/1.jpg',
          
       },
@@ -241,7 +254,7 @@ interface Jura {
         index: '7', 
         name: 'Giga WE6 ',  
         brand: 'Jura',
-        url: '/',
+        url: '/maschine/jura/x3',
         imageUrl: '/jura/we6/1.png',
          
       },
@@ -249,7 +262,7 @@ interface Jura {
         index: '8', 
         name: 'Giga WE8 ',  
         brand: 'Jura',
-        url: '/',
+        url: '/maschine/jura/x3',
         imageUrl: '/jura/we8/1.png',
          
       },

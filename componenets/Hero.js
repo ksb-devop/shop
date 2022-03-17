@@ -29,16 +29,23 @@ const settings = {
 export default function CaptionCarousel() {
   // As we have used custom buttons, we need a reference variable to
   // change the state
-  const [slider, setSlider] = React.useState('Slider');
+  const [slider, setSlider] = React.useState('Slider'); 
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
   const top = useBreakpointValue({ base: '90%', md: '50%' });
-  const side = useBreakpointValue({ base: '30%', md: '40px' });
+  const side = useBreakpointValue({ base: '30%', md: '10px' });
 
   // This list contains all the data for carousels
   // This can be static or loaded from a server
   const cards = [
+    {
+      title: ' ',
+      text:
+        " ",
+      image:
+        '/hero/hksb.png',
+    },
     {
       title: ' ',
       text:
@@ -67,9 +74,9 @@ export default function CaptionCarousel() {
   return (
     <Box
       position={'relative'}
-      mt={5}
-      height={'550px'}
-      width={{ base: '100%', md: '80%', lg: '100%' }}
+      mt={20}
+      height={{ base: '200px', lg: '550px' }}
+      width={'full'}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
       <link
@@ -86,42 +93,41 @@ export default function CaptionCarousel() {
       {/* Left Icon */}
       <IconButton
         aria-label="left-arrow"
-        variant="ghost"
+        colorScheme="green"
+        borderRadius="full"
         position="absolute"
         left={30}
-        top={280}
+        top={{ base: 150, lg: 280 }}
         transform={'translate(0%, -50%)'}
         zIndex={2}
         onClick={() => slider?.slickPrev()}>
-        <ArrowLeftIcon size="40px" />
+        <ArrowLeftIcon />
       </IconButton>
       {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
-        variant="ghost"
+        colorScheme="green"
+        borderRadius="full"
         position="absolute"
         right={30}
-        top={280}
+        top={{ base: 150, lg: 280 }}
         transform={'translate(0%, -50%)'}
         zIndex={2}
         onClick={() => slider?.slickNext()}>
-        <ArrowRightIcon size="40px" />
+        <ArrowRightIcon />
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((card, index) => (
           <Box
-            key={index} 
+            key={index}
+            height={'6xl'}
             position="relative"
-            backgroundPosition="center"
+            backgroundPosition="top"
             backgroundRepeat="no-repeat"
-            backgroundSize='contain'
-            backgroundImage={`url(${card.image})`}>
-            {/* This is the block for the caption */}
-            <Container size="container.lg" height="600px" position="relative">
-               
-            </Container>
-          </Box>
+            backgroundSize="contain"
+            backgroundImage={`url(${card.image})`}
+          />
         ))}
       </Slider>
     </Box>

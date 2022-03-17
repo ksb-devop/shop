@@ -101,7 +101,7 @@ const PadMaschine = ({ index, name, url , imageUrl }: PadMaschine) => {
             router.push(padmaschine.url);
   
             }}
-          colorScheme='blue'>Mehr Info </Button>
+          colorScheme='green'>Mehr Info </Button>
         </Stack>
       </Box>
 
@@ -134,7 +134,7 @@ interface PadMaschine {
       index: '1',  
       name: 'BLITZ für Espresso & Cappuccino',  
       brand: 'BLITZ',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/padmaschine/pm1.jpg',
        
     },
@@ -142,7 +142,7 @@ interface PadMaschine {
       index: '2',  
       name: 'Espressopadmaschine',  
       brand: 'Cecilia',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/padmaschine/pm2.jpg',
         
     }, 
@@ -150,7 +150,7 @@ interface PadMaschine {
       index: '3', 
       name: 'Espressopadmaschine',  
       brand: 'FROG',
-      url: '/',
+      url: '/maschine/jura/x3',
       imageUrl: '/padmaschine/pm3.jpg',
        
     },

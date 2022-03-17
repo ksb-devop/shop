@@ -23,7 +23,7 @@ import { useRouter } from 'next/router';
 my={20}
 w={{ base: '100%' , md: '110%' }}
 h={{ base: '100%' , md: '100%' }}
-backgroundImage={'/ap.jpg'}
+backgroundImage={'/b.jpg'}
 backgroundSize={'cover'}
 backgroundPosition={'center center'}>
 
@@ -36,7 +36,7 @@ backgroundPosition={'center center'}>
   backgroundColor={'black'}
   h={{ base: '90%', sm: '70%', md: '70%' }} 
   p={5}
-  opacity={0.7}
+  opacity={0.85}
   borderRadius={10} 
   m={{ base: '5%', sm: '10%', md: '10%' }} 
    align={'flex-start'} spacing={3}>

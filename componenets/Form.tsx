@@ -27,7 +27,7 @@ import {
     return (
       <Box
       my={12}
-      backgroundImage={'/b.jpg' }
+      backgroundImage={'/temp.jpg' }
       backgroundSize={'cover'}  
       borderRadius={5}
       filter={'blur'}

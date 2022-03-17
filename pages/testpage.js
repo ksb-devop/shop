@@ -7,6 +7,7 @@ import { Heading, Text, Box, Image,Link  } from '@chakra-ui/react'
 import Categories from '../componenets/Categories'
 import SideCategories from '../componenets/SideCategories'
 import { getMascinenCategories } from '../services'
+import X3slider from '../componenets/jura/productCarousel/X3slider.jsx'
 
 export default function Shop({mascineCategories}) {
 
@@ -31,7 +32,7 @@ export default function Shop({mascineCategories}) {
 
             
 
-     
+     <X3slider/>
 
         <div  className={styles.categrid}>
         {mascineCategories.map((mascineCategories, index) => (
