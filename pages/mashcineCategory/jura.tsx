@@ -214,7 +214,7 @@ interface Jura {
       index: '2',  
       name: 'Giga X3c',  
       brand: 'Jura',
-      url: '/maschine/jura/x3',
+      url: '/maschine/jura/x3c',
       imageUrl: '/jura/x3c/1.jpg',
         
     },
@@ -222,7 +222,7 @@ interface Jura {
       index: '3', 
       name: 'Giga X8',  
       brand: 'Jura',
-      url: '/maschine/jura/x3',
+      url: '/maschine/jura/x8',
       imageUrl: '/jura/x8/1.jpg',
        
     },
@@ -230,7 +230,7 @@ interface Jura {
       index: '4', 
       name: 'Giga X8c',  
       brand: 'Jura',
-      url: '/maschine/jura/x3',
+      url: '/maschine/jura/x8c',
       imageUrl: '/jura/x8c/1.jpg',
        
     },
@@ -238,7 +238,7 @@ interface Jura {
         index: '5', 
         name: 'Giga X6 ',  
         brand: 'Jura',
-        url: '/maschine/jura/x3',
+        url: '/maschine/jura/x6',
         imageUrl: '/jura/x6/1.jpg',
          
       },
@@ -246,7 +246,7 @@ interface Jura {
         index: '6', 
         name: 'Giga X10 ',  
         brand: 'Jura',
-        url: '/maschine/jura/x3',
+        url: '/maschine/jura/x10',
         imageUrl: '/jura/x10/1.jpg',
          
       },
@@ -254,16 +254,16 @@ interface Jura {
         index: '7', 
         name: 'Giga WE6 ',  
         brand: 'Jura',
-        url: '/maschine/jura/x3',
-        imageUrl: '/jura/we6/1.png',
+        url: '/maschine/jura/we6',
+        imageUrl: '/jura/we6/8.jpg',
          
       },
       {
         index: '8', 
         name: 'Giga WE8 ',  
         brand: 'Jura',
-        url: '/maschine/jura/x3',
-        imageUrl: '/jura/we8/1.png',
+        url: '/maschine/jura/we8',
+        imageUrl: '/jura/we8/8.png',
          
       },
     

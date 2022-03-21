@@ -151,7 +151,7 @@ interface Rex {
       index: '1',  
       name: 'S2',  
       brand: 'Rex Royal',
-      url: '/maschine/jura/x3',
+      url: '/maschine/rex/s2',
       imageUrl: '/rex/s2/1.jpg',
        
     },
@@ -159,7 +159,7 @@ interface Rex {
       index: '2',  
       name: 'S300',  
       brand: 'Rex Royal',
-      url: '/maschine/jura/x3',
+      url: '/maschine/rex/s300',
       imageUrl: '/rex/s300/1.jpg',
         
     },
@@ -167,7 +167,7 @@ interface Rex {
       index: '3', 
       name: 'S500',  
       brand: 'Rex Royal',
-      url: '/maschine/jura/x3',
+      url: '/maschine/rex/s500',
       imageUrl: '/rex/s500/1.jpg',
        
     },
